@@ -1,0 +1,27 @@
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: my_mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    volumes:
+      - mongo-data:/data/db
+
+  app:
+    build: .
+    container_name: my_node_app
+    depends_on:
+      - mongodb
+    ports:
+      - "3000:3000"
+    environment:
+      APP_NAME: DockerApp
+      PORT: 3000
+      MONGO_URI: mongodb://root:example@127.0.0.1:27017/mydatabase
+
+volumes:
+  mongo-data:
