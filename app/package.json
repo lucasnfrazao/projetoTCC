@@ -26,7 +26,7 @@
   "scripts": {
     "dev": "",
     "test": "",
-    "start": "nodemon docker-compose up --build",
+    "start": "nodemon node server.js",
     "stop": "node server.stop.js"
   },
   "devDependencies": {
