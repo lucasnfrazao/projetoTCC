@@ -1,7 +1,11 @@
 import mongoose from 'mongoose';
 import express from 'express';
-const { Schema } = mongoose;
 
+import Universidade from './models/universidadeModel.js';
+import Curso from './models/cursoModel.js';
+//const Universidade = require(');
+
+const { Schema } = mongoose;
 const app = express();
 app.use(express.json());
 
@@ -19,15 +23,6 @@ async function main() {
 }
 
 main().catch(err => console.log(err));
-
-const universidadeSchema = new Schema({
-  nome: String,
-  descricao: String,
-  cidade: String,
-  uf: String
-});
-
-const Universidade = mongoose.model('Universidade', universidadeSchema);
 
 app.get('/', (req, res) => {
   res.send('Hello from Node.js with MongoDB!');
@@ -65,4 +60,37 @@ app.post('/universidades', async (req, res) => {
     console.log(err);
     res.send(`Erro ao criar universidade! + ${err}`);
   }
+});
+
+app.get('/cursos', async (req, res) => {
+  try {
+    const cursos = await Curso.find().populate("universidade");
+    console.log(cursos);
+    res.send(`Achei Curso! + ${cursos.id}`);
+  } catch(err) {
+    console.log(err);
+    res.send(`Erro ao criar curso! + ${err}`);
+  }
+});
+
+app.post('/cursos', async (req, res) => {
+  try {
+    const body = req.body;
+    const curso = new Curso({
+      nome: body.nome,
+      departamento: body.departamento, 
+      categoria: body.categoria,
+      universidade: body.universidade
+      });
+    await curso.save();
+    console.log(req.body);
+    res.send(`Criei Curso! + ${curso.id}`);
+  } catch(err) {
+    console.log(err);
+    res.send(`Erro ao criar curso! + ${err}`);
+  }
+});
+
+app.put('/universidades/:id', async (req, res) => {
+
 });

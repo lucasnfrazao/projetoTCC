@@ -9,6 +9,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
     volumes:
+      - mongo-data:/data/mongod.conf:/etc/mongod.conf
       - mongo-data:/data/db
 
   app:
