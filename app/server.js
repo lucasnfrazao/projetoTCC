@@ -1,29 +1,34 @@
 import mongoose from 'mongoose';
 import express from 'express';
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
 
-import Universidade from './models/universidadeModel.js';
-import Curso from './models/cursoModel.js';
-//const Universidade = require(');
+import Universidade from './models/Universidade.js';
+import User from './models/User.js';
 
 const { Schema } = mongoose;
 const app = express();
 app.use(express.json());
-
 const PORT = 4000;
 
 // MongoDB connection
-const mongoURI = 'mongodb://root:example@127.0.0.1:27017/vestibulario?authSource=admin'
-
 async function main() {
+
+  /// Usado para carregar .env file
+  dotenv.config();
+
+  const mongoURI = `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@127.0.0.1:27017/vestibulario?authSource=admin`
+  
   await mongoose.connect(mongoURI)
     .then(() => console.log('MongoDB Connected'))
     .catch(err => console.log(err, 'Erro ao Conectar'));
 
-  // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
 
 main().catch(err => console.log(err));
 
+// Public Route
 app.get('/', (req, res) => {
   res.send('Hello from Node.js with MongoDB!');
 });
@@ -47,21 +52,32 @@ app.get('/universidades/:id', async (req, res) => {
 app.post('/universidades', async (req, res) => {
   try {
     const body = req.body;
+
+    const universidadeExiste = await Universidade.findOne({ nome: body.nome })
+
+    if (universidadeExiste !== null) {
+      return res.status(500).json({msg: 'Universidade já existe...'});
+    }
+
     const uni = new Universidade({
       nome: body.nome,
       descricao: body.descricao, 
       cidade: body.cidade,
-      uf: body.uf
+      uf: body.uf,
+      cursos: body.cursos
       });
+
     await uni.save();
+
     console.log(req.body);
-    res.send(`Criei Universidade! + ${uni.id}`);
+    res.status(201).json({ uni});
   } catch(err) {
     console.log(err);
     res.send(`Erro ao criar universidade! + ${err}`);
   }
 });
 
+/*
 app.get('/cursos', async (req, res) => {
   try {
     const cursos = await Curso.find().populate("universidade");
@@ -92,5 +108,123 @@ app.post('/cursos', async (req, res) => {
 });
 
 app.put('/universidades/:id', async (req, res) => {
-
+  
 });
+*/
+
+// Registrar Usuário
+app.post('/auth/register', async (req, res) => {
+  const {name, email, password, confirmPassword} = req.body;
+
+  if (!name) {
+    return res.status(422).json({msg: 'O nome é obrigatório'});
+  }
+
+  if (!email) {
+    return res.status(422).json({msg: 'O email é obrigatório'});
+  }
+
+  if (!password) {
+    return res.status(422).json({msg: 'A senha é obrigatória'});
+  }
+
+  // Criptography
+  const salt = await bcrypt.genSalt(12);
+  const passwordHash = await bcrypt.hash(password, salt);
+
+  // create user
+  const user = new User({
+    name,
+    email,
+    password: passwordHash,
+    role: 'aluno'
+  })
+
+  try {
+    await user.save()
+    res.status(201).json({msg: 'Usuario criado com sucesso'})
+  } catch(error) {
+    res.status(500).json({msg: error})
+  }
+
+})
+
+// Login User
+app.post('/auth/login', async (req, res) => {
+  const { email, password } = req.body;
+
+  if (!email) {
+    return res.status(422).json({msg: 'O nome é obrigatório'});
+  }
+
+  if (!password) {
+    return res.status(422).json({msg: 'O email é obrigatório'});
+  }
+
+  const user = await User.findOne({ email: email });
+
+  // Checando se usuário existe...
+  if (!user) {
+    return res.status(404).json({msg: 'E-mail não encontrado...'});
+  }
+
+  // Checando a senha...
+  const checkPassword = await bcrypt.compare(password, user.password);
+
+  if (!checkPassword) {
+    return res.status(404).json({msg: 'Senha inválida'});
+  }
+
+  try {
+    const secret = process.env.SECRET;
+    const token = jwt.sign({
+      id: user._id
+    },
+    secret
+  )
+
+  res.status(200).json({msg: 'Autenticado com sucesso', token: token});
+  } catch(error){
+    console.log(error);
+    res.status(500).json({msg: error});
+  }
+
+})
+
+// Private Route
+app.get('/user/:id', checkToken, async (req, res) => {
+
+  const id = req.params.id;
+
+  // -password excluiu a senha do usuário.
+  const user = await User.findById(id, '-password');
+
+  if (!user) {
+    return res.status(404).json({msg: 'User não encontrado...'});
+  }
+
+  res.status(200).json({ user });
+});
+
+// Middleware
+function checkToken(req, res, next) {
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.split(" ")[1];
+
+  console.log(token);
+
+  if (!token) {
+    return res.status(401).json({msg: 'Acesso negado...'});
+  }
+
+  try {
+    const secret = process.env.SECRET;
+    jwt.verify(token, secret);
+    next();
+  } catch(error) {
+    console.log(error);
+    res.status(400).json({msg: 'Token Inválido'});
+  }
+}
+
+// TODO: Criar Middleware para Admin
