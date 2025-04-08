@@ -3,6 +3,7 @@ import express from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
+import crypto from 'crypto';
 
 import Universidade from './models/Universidade.js';
 import User from './models/User.js';
@@ -23,7 +24,6 @@ async function main() {
   await mongoose.connect(mongoURI)
     .then(() => console.log('MongoDB Connected'))
     .catch(err => console.log(err, 'Erro ao Conectar'));
-
 }
 
 main().catch(err => console.log(err));
@@ -49,7 +49,7 @@ app.get('/universidades/:id', async (req, res) => {
   res.send(universidade);
 });
 
-app.post('/universidades', async (req, res) => {
+app.post('/universidades', checkIfAdmin, async (req, res) => {
   try {
     const body = req.body;
 
@@ -76,41 +76,6 @@ app.post('/universidades', async (req, res) => {
     res.send(`Erro ao criar universidade! + ${err}`);
   }
 });
-
-/*
-app.get('/cursos', async (req, res) => {
-  try {
-    const cursos = await Curso.find().populate("universidade");
-    console.log(cursos);
-    res.send(`Achei Curso! + ${cursos.id}`);
-  } catch(err) {
-    console.log(err);
-    res.send(`Erro ao criar curso! + ${err}`);
-  }
-});
-
-app.post('/cursos', async (req, res) => {
-  try {
-    const body = req.body;
-    const curso = new Curso({
-      nome: body.nome,
-      departamento: body.departamento, 
-      categoria: body.categoria,
-      universidade: body.universidade
-      });
-    await curso.save();
-    console.log(req.body);
-    res.send(`Criei Curso! + ${curso.id}`);
-  } catch(err) {
-    console.log(err);
-    res.send(`Erro ao criar curso! + ${err}`);
-  }
-});
-
-app.put('/universidades/:id', async (req, res) => {
-  
-});
-*/
 
 // Registrar Usuário
 app.post('/auth/register', async (req, res) => {
@@ -169,7 +134,7 @@ app.post('/auth/login', async (req, res) => {
   }
 
   // Checando a senha...
-  const checkPassword = await bcrypt.compare(password, user.password);
+  const checkPassword = bcrypt.compare(password, user.password);
 
   if (!checkPassword) {
     return res.status(404).json({msg: 'Senha inválida'});
@@ -228,3 +193,25 @@ function checkToken(req, res, next) {
 }
 
 // TODO: Criar Middleware para Admin
+
+async function checkIfAdmin(req, res, next)  {
+  const authHeader = req.headers['authorization'];
+
+  if (!authHeader) return res.status(401).json({ error: 'No token provided' });
+
+  const token = authHeader.split(' ')[1]; // Bearer <token>
+  console.log("token", token);
+
+  try {
+    console.log("Verifying token...")
+    const decoded = jwt.verify(token, process.env.SECRET); // decode token
+    const user = await User.findById(decoded.id); // fetch user
+
+    if (!user) return res.status(404).json({ error: 'User not found' });
+    if (user.role != "admin") return res.status(404).json({ error: 'User not found' });
+
+    next();
+  } catch (err) {
+    res.status(403).json({ error: 'Invalid token' });
+  }
+};
