@@ -3,7 +3,6 @@ import express from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
-import crypto from 'crypto';
 
 import Universidade from './models/Universidade.js';
 import User from './models/User.js';
