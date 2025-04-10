@@ -26,8 +26,7 @@
   "scripts": {
     "dev": "",
     "test": "",
-    "start": "set NODE_ENV=dev && nodemon node server.js",
-    "stop": "node server.stop.js"
+    "start": "set NODE_ENV=dev && nodemon node app.js"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"
