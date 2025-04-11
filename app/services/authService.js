@@ -1,9 +1,10 @@
 import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
 import userService from '../services/userService.js';
 
 const registerStudentUser = async (req, res) => {
     const {name, lastName, email, password, confirmPassword} = req.body;
-  
+
     if (!name) {
         return res.status(422).json({msg: 'O nome é obrigatório'});
     }
@@ -44,8 +45,6 @@ const registerStudentUser = async (req, res) => {
     };
     console.log(userObject);
     const user = await userService.createUser(userObject);
-
-    console.log('User Here', user);
   
     try {
       //await user.save()
@@ -57,7 +56,7 @@ const registerStudentUser = async (req, res) => {
 
 const loginUser = async (req, res) => {
     const { email, password } = req.body;
-  
+
     if (!email) {
         return res.status(422).json({msg: 'O nome é obrigatório'});
     }
@@ -82,6 +81,7 @@ const loginUser = async (req, res) => {
   
     try {
       const secret = process.env.SECRET;
+      console.log(secret);
       const token = jwt.sign({
         id: user._id
       },

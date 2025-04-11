@@ -26,8 +26,8 @@ const createUser = async (data) => {
     return newUser;
 }
 
-const findUserById = (id) => {
-    return User.findById(id);
+const findUserById = async (id) => {
+    return await User.findById(id);
 }
 
 const findUserWithEmail = (email) => {

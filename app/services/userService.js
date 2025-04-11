@@ -8,8 +8,9 @@ const createUser = (data) => {
   return userModel.createUser(data);
 };
 
-const getUserById = (id) => {
-  return userModel.findById(id);
+const getUserById = async (id) => {
+  console.log(id);
+  return await userModel.findUserById(id);
 };
 
 const getUserUsingEmail = async (email) => {

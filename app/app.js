@@ -3,6 +3,8 @@ import express from 'express';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 
+import userService from './services/userService.js';
+
 import Universidade from './models/Universidade.js';
 import User from './models/User.js';
 
@@ -130,15 +132,18 @@ async function checkIfAdmin(req, res, next)  {
   console.log("token", token);
 
   try {
-    console.log("Verifying token...")
+    console.log("Verifying token...");
+    console.log(process.env.SECRET);
     const decoded = jwt.verify(token, process.env.SECRET); // decode token
-    const user = await User.findById(decoded.id); // fetch user
+    console.log(decoded.id);
+    const user = await userService.getUserById(decoded.id); // fetch user
 
     if (!user) return res.status(404).json({ error: 'User not found' });
     if (user.role != "admin") return res.status(404).json({ error: 'User not found' });
 
     next();
   } catch (err) {
+    console.log("Invalid token")
     res.status(403).json({ error: 'Invalid token' });
   }
 };
