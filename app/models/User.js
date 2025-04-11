@@ -27,6 +27,7 @@ const createUser = async (data) => {
 }
 
 const findUserById = async (id) => {
+    console.log(id);
     return await User.findById(id);
 }
 

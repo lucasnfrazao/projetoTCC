@@ -137,8 +137,9 @@ async function checkIfAdmin(req, res, next)  {
     const decoded = jwt.verify(token, process.env.SECRET); // decode token
     console.log(decoded.id);
     const user = await userService.getUserById(decoded.id); // fetch user
+    console.log(user);
 
-    if (!user) return res.status(404).json({ error: 'User not found' });
+    if (user === null) return res.status(404).json({ error: 'User not found' });
     if (user.role != "admin") return res.status(404).json({ error: 'User not found' });
 
     next();
