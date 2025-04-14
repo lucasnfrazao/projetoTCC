@@ -6,4 +6,19 @@ const cursoSchema = new Schema({
     nome: { type: String, required: true }
 });
 
-export default cursoSchema;
+class Curso {
+    constructor(id, nome) {
+        this.id = id;
+        this.nome = nome;
+    }
+}
+
+const createCurso = async (nome) => {
+    const newCurso = new Curso(mongoose.Schema.Types.ObjectId, nome);
+    return newCurso
+}
+
+export default {
+    cursoSchema,
+    createCurso
+}

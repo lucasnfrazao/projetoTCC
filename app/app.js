@@ -6,10 +6,10 @@ import dotenv from 'dotenv';
 import userService from './services/userService.js';
 
 import Universidade from './models/Universidade.js';
-import User from './models/User.js';
 
 import userRoutes from './routes/userRoutes.js';
 import authRoutes from './routes/authRoutes.js';
+import universidadeRoutes from './routes/universidadeRoutes.js';
 
 const { Schema } = mongoose;
 const app = express();
@@ -38,11 +38,13 @@ app.get('/', (req, res) => {
 
 app.use('/user', userRoutes);
 app.use('/auth', authRoutes);
+app.use('/universidades', universidadeRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
+/*
 app.get('/universidades', async (req, res) => {
   const universidades = await Universidade.find();
   console.log(universidades);
@@ -82,6 +84,8 @@ app.post('/universidades', checkIfAdmin, async (req, res) => {
     res.send(`Erro ao criar universidade! + ${err}`);
   }
 });
+
+*/
 
 // Private Route
 /*
@@ -139,7 +143,7 @@ async function checkIfAdmin(req, res, next)  {
     const user = await userService.getUserById(decoded.id); // fetch user
     console.log(user);
 
-    if (user === null) return res.status(404).json({ error: 'User not found' });
+    if (!user) return res.status(404).json({ error: 'User not found' });
     if (user.role != "admin") return res.status(404).json({ error: 'User not found' });
 
     next();
