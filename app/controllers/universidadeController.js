@@ -24,6 +24,24 @@ const getListaDeCursos = async (req, res) => {
     res.status(200).json(cursos);
 };
 
+const getListaDeVestibulares = async (req, res) => {
+    const id = req.params.id;
+
+    if (id === null) {
+        res.status(404).json({msg: 'id inválido'});
+        return
+    }
+
+    const vestibulares = await universidadeService.getListaDeVestibulares(id);
+
+    if (vestibulares === null) {
+        res.status(404).json({msg: 'could not find cursos'});
+        return
+    }
+
+    res.status(200).json(vestibulares);
+};
+
 const getUniversidadeWithId = async (req, res) => {
     const id = req.body;
     return universidadeService.getUniversidadeWithId(id);
@@ -56,6 +74,7 @@ const createUniversidade = async (req, res) => {
 export default {
     getListaDeUniversidades,
     getListaDeCursos,
+    getListaDeVestibulares,
     getUniversidadeWithId,
     createUniversidade
 }

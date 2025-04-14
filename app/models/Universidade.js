@@ -43,6 +43,11 @@ const getAllCursos = async (id) => {
   return universidade.cursos;
 };
 
+const getAllVestibulares = async (id) => {
+  const universidade = await Universidade.findById(id);
+  return universidade.vestibulares;
+};
+
 const findById = async (id) => {
     console.log(id);
     return await Universidade.findById(id);
@@ -52,5 +57,6 @@ export default {
   createUniversidade,
   findAll,
   findById,
-  getAllCursos
+  getAllCursos,
+  getAllVestibulares
 };
