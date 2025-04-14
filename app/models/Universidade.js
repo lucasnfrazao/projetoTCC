@@ -1,25 +1,31 @@
 import mongoose from 'mongoose';
-import cursoModel from './Curso.js';
 import vestibular from './Vestibular.js';
 const { Schema } = mongoose;
-
-//const Vestibular = new Object();
 
 const universidadeSchema = new Schema({
     nome: String,
     descricao: String,
     cidade: String,
     uf: String,
-    cursos: [
-      {
-      _id: { type: mongoose.Schema.Types.ObjectId, auto: true },
-      nome: { type: String, required: true }
-      }
-    ],
+    cursos: [],
     vestibulares: [vestibular]
 });
 
 const Universidade = mongoose.model('Universidade', universidadeSchema);
+
+const createUniversidade = async (data) => {
+  const newUni = new Universidade({ 
+    nome: data.nome,
+    descricao: data.descricao,
+    cidade: data.cidade, 
+    uf: data.uf, 
+    cursos: data.cursos,
+    vestibulares: data.vestibulares
+  });
+  console.log(newUni);
+  await newUni.save();
+  return newUni;
+}
 
 const findAll = async () => {
     const unis = await Universidade.find();
@@ -32,19 +38,10 @@ const findAll = async () => {
     return uniMap;
 };
 
-const createUniversidade = async (data) => {
-    const newUni = new Universidade({ 
-      nome: data.nome,
-      descricao: data.descricao,
-      cidade: data.cidade, 
-      uf: data.uf, 
-      cursos: data.cursos,
-      vestibulares: data.vestibulares
-    });
-    console.log(newUni);
-    await newUni.save();
-    return newUni;
-}
+const getAllCursos = async (id) => {
+  const universidade = await Universidade.findById(id);
+  return universidade.cursos;
+};
 
 const findById = async (id) => {
     console.log(id);
@@ -54,5 +51,6 @@ const findById = async (id) => {
 export default {
   createUniversidade,
   findAll,
-  findById
+  findById,
+  getAllCursos
 };
