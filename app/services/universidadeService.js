@@ -20,10 +20,15 @@ const createUniversidade = async (data) => {
     return await universidade.createUniversidade(data);
 }
 
+const findUniversidadeAndUpdateWithData = async (id, data) => {
+    return await universidade.findUniversidadeAndUpdateWithData(id, data);
+}
+
 export default {
     getListaDeUniversidades,
     getListaDeCursos,
     getListaDeVestibulares,
     getUniversidadeWithId,
+    findUniversidadeAndUpdateWithData,
     createUniversidade
 }

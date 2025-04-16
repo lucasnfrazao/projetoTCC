@@ -1,5 +1,4 @@
 import universidadeService from '../services/universidadeService.js';
-import cursoService from '../services/cursoService.js';
 
 const getListaDeUniversidades = async (req, res) => {
     const universidades = await universidadeService.getListaDeUniversidades();
@@ -71,10 +70,34 @@ const createUniversidade = async (req, res) => {
     res.status(200).json(newUniversidade);
 };
 
+const updateDataUniversidade = async (req, res) => {
+    const id = req.params.id;
+    const updateDict = req.body;
+    const updateType = updateDict["type"];
+    const updateContent = updateDict["content"];
+
+    if (updateType === null) {
+        res.status(404)
+        return
+    }
+
+    if (updateContent === null) {
+        res.status(404)
+        return
+    }
+
+    var jsonData = {};
+    jsonData[updateType] = updateContent;
+
+    const newUni = universidadeService.findUniversidadeAndUpdateWithData(id, jsonData);
+    res.status(200).json(newUni);
+};
+
 export default {
     getListaDeUniversidades,
     getListaDeCursos,
     getListaDeVestibulares,
     getUniversidadeWithId,
-    createUniversidade
+    createUniversidade,
+    updateDataUniversidade
 }

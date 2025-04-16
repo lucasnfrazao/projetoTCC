@@ -8,7 +8,7 @@ const universidadeSchema = new Schema({
     cidade: String,
     uf: String,
     cursos: [],
-    vestibulares: [vestibular]
+    vestibulares: []
 });
 
 const Universidade = mongoose.model('Universidade', universidadeSchema);
@@ -22,7 +22,7 @@ const createUniversidade = async (data) => {
     cursos: data.cursos,
     vestibulares: data.vestibulares
   });
-  console.log(newUni);
+  
   await newUni.save();
   return newUni;
 }
@@ -49,14 +49,23 @@ const getAllVestibulares = async (id) => {
 };
 
 const findById = async (id) => {
-    console.log(id);
     return await Universidade.findById(id);
 }
+
+const findUniversidadeAndUpdateWithData = async (id, data) => {
+    const updatedUni = await Universidade.findByIdAndUpdate(
+      id,
+      { $set: data},
+      { new: true }
+    );
+    return updatedUni
+};
   
 export default {
   createUniversidade,
   findAll,
   findById,
+  findUniversidadeAndUpdateWithData,
   getAllCursos,
   getAllVestibulares
 };
