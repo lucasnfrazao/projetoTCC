@@ -6,7 +6,7 @@ const User = mongoose.model('User', {
     email: String,
     password: String,
     role: String,
-    universidadesSeguidas: []
+    universidadesSeguidas: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Universidade' }]
 })
 
 const findAll = async () => {
@@ -44,17 +44,17 @@ const findUserWithEmail = (email) => {
 }
 
 const alterarStatusSeguindoUniversidade = async (userId, id, isFollowing) => {
-    const operator = isFollowing ? "$push" : "$pull"
+    // const operator = isFollowing ? "$push" : "$pull"
 
-    const user = await User.findById(id);
+    // const user = await User.findById(id);
 
-    // TODO: Add check to not add two universities with the same id.
+    // // TODO: Add check to not add two universities with the same id.
 
-    const updatedUser = await User.findByIdAndUpdate(
-        userId,
-        { [operator] : { universidadesSeguidas: id }},
-        { new: true }
-    )
+    // const updatedUser = await User.findByIdAndUpdate(
+    //     userId,
+    //     { [operator] : { universidadesSeguidas: id }},
+    //     { new: true }
+    // )
 
     return updatedUser
 };

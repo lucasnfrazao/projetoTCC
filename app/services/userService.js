@@ -1,4 +1,6 @@
+import mongoose from 'mongoose';
 import userModel from '../models/User.js';
+import universidadeModel from '../models/Universidade.js';
 
 const getUsers = async () => {
   return await userModel.findAll();
@@ -17,8 +19,28 @@ const getUserUsingEmail = async (email) => {
   return await userModel.findUserWithEmail(email);
 }
 
-const alterarStatusSeguindoUniversidade = async (userId, id, isFollowing) => {
-  return await userModel.alterarStatusSeguindoUniversidade(userId, id, isFollowing);
+const alterarStatusSeguindoUniversidade = async (userId, uniId, isFollowing) => {
+  const operator = isFollowing ? "$push" : "$pull"
+
+  const session = await mongoose.startSession();
+  session.startTransaction();
+
+  const User = userModel.User;
+  const Universidade = universidadeModel.Universidade;
+
+  const newUni = await Universidade.updateOne(
+    { _id: uniId },
+    { [operator]: { usuariosSeguindo: userId } },
+    { new: true }
+  )
+
+  const newUser = await User.updateOne(
+    { _id: userId },
+    { [operator]: { universidadesSeguidas: uniId } },
+    { new: true }
+  )
+
+  return newUser
 }
  
 export default {

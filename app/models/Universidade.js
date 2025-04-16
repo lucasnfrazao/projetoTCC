@@ -9,7 +9,7 @@ const universidadeSchema = new Schema({
     uf: String,
     cursos: [],
     vestibulares: [],
-    usuariosSeguindo: []
+    usuariosSeguindo: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }]
 });
 
 const Universidade = mongoose.model('Universidade', universidadeSchema);
@@ -69,5 +69,6 @@ export default {
   findById,
   findUniversidadeAndUpdateWithData,
   getAllCursos,
-  getAllVestibulares
+  getAllVestibulares,
+  Universidade
 };

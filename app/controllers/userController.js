@@ -23,13 +23,13 @@ const getUserById = (req, res) => {
   }
 };
 
-const alterarStatusSeguindoUniversidade = (req, res) => {
+const alterarStatusSeguindoUniversidade = async (req, res) => {
   const userId = req.params.id;
   const dict = req.body;
   const id = dict["id"];
   const isFollowing = dict["isFollowing"];
 
-  const updatedUser = userService.alterarStatusSeguindoUniversidade(userId, id, isFollowing);
+  const updatedUser = await userService.alterarStatusSeguindoUniversidade(userId, id, isFollowing);
 
   res.status(200).json(updatedUser);
 };
