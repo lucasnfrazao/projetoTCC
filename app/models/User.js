@@ -5,7 +5,8 @@ const User = mongoose.model('User', {
     lastName: String,
     email: String,
     password: String,
-    role: String
+    role: String,
+    universidadesSeguidas: []
 })
 
 const findAll = async () => {
@@ -20,7 +21,14 @@ const findAll = async () => {
 };
 
 const createUser = async (data) => {
-    const newUser = new User({ name: data.name, lastName: data.lastName, email: data.email, password: data.password, role: data.role });
+    const newUser = new User({ 
+        name: data.name,
+        lastName: data.lastName,
+        email: data.email, 
+        password: data.password, 
+        role: data.role,
+        universidadesSeguidas: data.universidadesSeguidas
+    });
     console.log(newUser);
     await newUser.save();
     return newUser;
@@ -35,10 +43,27 @@ const findUserWithEmail = (email) => {
     return User.findOne({email: email});
 }
 
+const alterarStatusSeguindoUniversidade = async (userId, id, isFollowing) => {
+    const operator = isFollowing ? "$push" : "$pull"
+
+    const user = await User.findById(id);
+
+    // TODO: Add check to not add two universities with the same id.
+
+    const updatedUser = await User.findByIdAndUpdate(
+        userId,
+        { [operator] : { universidadesSeguidas: id }},
+        { new: true }
+    )
+
+    return updatedUser
+};
+
 export default {
     findAll,
     createUser,
     findUserById,
     findUserWithEmail,
+    alterarStatusSeguindoUniversidade,
     User
 };

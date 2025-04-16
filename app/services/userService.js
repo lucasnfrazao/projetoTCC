@@ -17,9 +17,14 @@ const getUserUsingEmail = async (email) => {
   return await userModel.findUserWithEmail(email);
 }
 
+const alterarStatusSeguindoUniversidade = async (userId, id, isFollowing) => {
+  return await userModel.alterarStatusSeguindoUniversidade(userId, id, isFollowing);
+}
+ 
 export default {
     getUsers,
     createUser,
     getUserById,
-    getUserUsingEmail
+    getUserUsingEmail,
+    alterarStatusSeguindoUniversidade
 };

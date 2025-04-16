@@ -12,7 +12,7 @@ router.get('/:id', universidadeController.getUniversidadeWithId);
 router.get('/:id/cursos', universidadeController.getListaDeCursos);
 router.get('/:id/vestibulares', universidadeController.getListaDeVestibulares);
 
-/// Patches
-router.patch('/:id', universidadeController.updateDataUniversidade);
+/// Put
+router.put('/:id', universidadeController.updateDataUniversidade);
 
 export default router;
