@@ -40,7 +40,7 @@ const alterarStatusSeguindoUniversidade = async (userId, uniId, isFollowing) => 
     { new: true }
   )
 
-  return newUser
+  return (newUser + newUni)
 }
  
 export default {

@@ -4,9 +4,6 @@ import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 
 import userService from './services/userService.js';
-
-import Universidade from './models/Universidade.js';
-
 import userRoutes from './routes/userRoutes.js';
 import authRoutes from './routes/authRoutes.js';
 import universidadeRoutes from './routes/universidadeRoutes.js';
@@ -43,66 +40,6 @@ app.use('/universidades', universidadeRoutes);
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
-/*
-app.get('/universidades', async (req, res) => {
-  const universidades = await Universidade.find();
-  console.log(universidades);
-  res.send(universidades);
-});
-
-app.get('/universidades/:id', async (req, res) => {
-  const universidade = await Universidade.findById(req.params.id);
-  console.log(universidade);
-  res.send(universidade);
-});
-
-app.post('/universidades', checkIfAdmin, async (req, res) => {
-  try {
-    const body = req.body;
-
-    const universidadeExiste = await Universidade.findOne({ nome: body.nome })
-
-    if (universidadeExiste !== null) {
-      return res.status(500).json({msg: 'Universidade já existe...'});
-    }
-
-    const uni = new Universidade({
-      nome: body.nome,
-      descricao: body.descricao, 
-      cidade: body.cidade,
-      uf: body.uf,
-      cursos: body.cursos
-      });
-
-    await uni.save();
-
-    console.log(req.body);
-    res.status(201).json({ uni});
-  } catch(err) {
-    console.log(err);
-    res.send(`Erro ao criar universidade! + ${err}`);
-  }
-});
-
-*/
-
-// Private Route
-/*
-app.get('/user/:id', checkToken, async (req, res) => {
-
-  const id = req.params.id;
-
-  // -password excluiu a senha do usuário.
-  const user = await User.findById(id, '-password');
-
-  if (!user) {
-    return res.status(404).json({msg: 'User não encontrado...'});
-  }
-
-  res.status(200).json({ user });
-});
-*/
 
 // Middleware
 function checkToken(req, res, next) {

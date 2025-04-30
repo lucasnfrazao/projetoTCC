@@ -1,0 +1,86 @@
+.homepage {
+    max-width: 1650px;
+    margin: 0 auto;
+    margin-top: 95px;
+}
+
+.hero {
+    /*background-color: #196b7c;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    padding-left: 40px;
+    padding-right: 60px;
+    gap: 60px;
+    width: 100%;
+}
+
+.hero-text {
+    max-width: 100%;
+    //padding: 20px;
+}
+
+.hero-title {
+    font-size: 50px;
+    font-weight: 500;
+    font-family: 'Outfit';
+}
+
+.cta-button {
+    background-color: #25a2c3;
+    border: none;
+    padding: 15px 60px;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.hero-image {
+    width: 352px;
+    height: 352px;
+}
+
+.search {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.search input {
+    padding: 14px 20px;
+    width: 60%;
+    border: none;
+    border-radius: 12px;
+    background: #f1f1f1;
+}
+
+.cards-section {
+    padding: 40px 20px;
+}
+
+.card-list {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #25a2c3;
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 200px;
+    text-align: left;
+}
+
+.info-button {
+    background-color: #196b7c;
+    color: white;
+    border: none;
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 6px;
+}

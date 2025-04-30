@@ -1,0 +1,32 @@
+import Card from './Card.jsx';
+import './homepage.css';
+import homeIcon from './assets/svg-home.svg';
+
+function HomePage() {
+    return (
+      <div className="homepage">
+        <section className="hero">
+          <div className="hero-text">
+            <h1 className="hero-title">O Futuro é seu.<br />A gente só mostra o caminho.</h1>
+            <button className="cta-button">Encontrar Universidades</button>
+          </div>
+          <img src= {homeIcon} alt="graphic" className="hero-image" />
+        </section>
+  
+        <section className="search">
+          <input type="text" placeholder="Procure por nome da universidade" />
+        </section>
+  
+        <section className="cards-section">
+          <h2>Próximos Vestibulares</h2>
+          <div className="card-list">
+            <Card title="PUC-Rio" />
+            <Card title="PUC-RS" />
+            <Card title="PUC-SP" />
+          </div>
+        </section>
+      </div>
+    );
+}
+
+export default HomePage;
