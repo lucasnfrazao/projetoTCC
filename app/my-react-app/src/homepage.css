@@ -1,23 +1,23 @@
 .homepage {
-    max-width: 1650px;
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
     margin: 0 auto;
-    margin-top: 95px;
+    margin-top: 50px;
+    margin-bottom: 150px;
+    padding: 0 16px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 30px;
 }
 
 .hero {
-    /*background-color: #196b7c;*/
     display: flex;
-    justify-content: space-between;
-    align-items: left;
-    padding-left: 40px;
-    padding-right: 60px;
+    justify-content: flex-start;
+    align-items: center;
     gap: 60px;
     width: 100%;
-}
-
-.hero-text {
-    max-width: 100%;
-    //padding: 20px;
 }
 
 .hero-title {
@@ -37,33 +37,56 @@
     margin-top: 20px;
 }
 
+.divider {
+    display: flex;
+    width: 100%;
+    border-top: 1px solid #bbb;
+    margin: 20px 20px;
+    opacity: 0.2;
+}
+
 .hero-image {
-    width: 352px;
+    display: flex;
+    flex-grow: 1;
     height: 352px;
 }
 
 .search {
-    padding: 40px 20px;
+    display: flex;
+    flex-grow: 1;
     text-align: center;
 }
 
 .search input {
     padding: 14px 20px;
-    width: 60%;
+    width: 100%;
     border: none;
     border-radius: 12px;
     background: #f1f1f1;
 }
 
 .cards-section {
-    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.card-header {
+    font-size: 25px;
+    font-weight: 500;
+    font-family: 'Outfit';
+    color: #6B6B6B;
 }
 
 .card-list {
     display: flex;
     gap: 20px;
-    justify-content: center;
+    margin-top: 20px;
+    justify-content: flex-start;
     flex-wrap: wrap;
+    flex-grow: 1;
 }
 
 .card {

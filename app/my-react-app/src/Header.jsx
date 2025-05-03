@@ -3,17 +3,19 @@ import React from 'react';
 function Header() {
   return (
     <header style={styles.header}>
-      <h1 style={styles.title}>Vestibulário</h1>
-      <nav>
-        <div>
-        <ul style={styles.navList}>
-          <li><a href="/" style={styles.link}>Início</a></li>
-          <li><a href="/about" style={styles.link}>Vestibulares</a></li>
-        </ul>
+      <div style={styles.headerContent}>
+        <h1 style={styles.title}>Vestibulário</h1>
+        <nav>
+          <div>
+          <ul style={styles.navList}>
+            <li><a href="/inicio" style={styles.link}>Início</a></li>
+            <li><a href="/vestibulares" style={styles.link}>Vestibulares</a></li>
+          </ul>
+          </div>
+        </nav>
+        <div style={styles.login}>
+              <button style={styles.loginButton}><a href="/login">Entrar</a></button>
         </div>
-      </nav>
-      <div style={styles.login}>
-            <button style={styles.loginButton}><a href="/login">Entrar</a></button>
       </div>
     </header>
   );
@@ -23,13 +25,22 @@ const styles = {
   header: {
     backgroundColor: '#00AFC2',
     padding: '20px',
-    paddingLeft: '40px',
-    paddingRight: '40px',
+    // paddingLeft: '40px',
+    // paddingRight: '40px',
     margin: '0',
     color: 'white',
+    // display: 'flex',
+    // alignItems: 'center',
+    // justifyContent: 'space-between',
+    // alignContent: 'center'
+  },
+  headerContent: {
     display: 'flex',
+    margin: '0 auto',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    alignContent: 'center',
+    justifyContent: 'space-around',
+    maxWidth: '1200px'
   },
   title: {
     margin: 0,

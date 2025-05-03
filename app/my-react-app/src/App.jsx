@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Header from './Header.jsx';
 import Homepage from './Homepage.jsx';
+import Footer from './Footer.jsx';
 
 export default class App extends React.Component {
     render() {
@@ -10,6 +11,7 @@ export default class App extends React.Component {
             <>
                 <Header/>
                 <Homepage/>
+                <Footer/>
             </>
         );
     };

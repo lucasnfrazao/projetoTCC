@@ -13,12 +13,14 @@ function HomePage() {
           <img src= {homeIcon} alt="graphic" className="hero-image" />
         </section>
   
-        <section className="search">
+        {/* <section className="search">
           <input type="text" placeholder="Procure por nome da universidade" />
-        </section>
+        </section> */}
+
+        <hr className="divider"/>
   
         <section className="cards-section">
-          <h2>Próximos Vestibulares</h2>
+          <h2 className="card-header">Próximos Vestibulares</h2>
           <div className="card-list">
             <Card title="PUC-Rio" />
             <Card title="PUC-RS" />
