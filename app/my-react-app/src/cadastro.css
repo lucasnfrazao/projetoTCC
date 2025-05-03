@@ -1,0 +1,104 @@
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 3rem;
+    gap: 4rem;
+    flex-wrap: wrap;
+  }
+  
+  .logo-section {
+    max-width: 340px;
+    color: #3ba8be;
+    text-align: left;
+  }
+  
+  .logo-icon {
+    width: 60px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .logo-title {
+    font-size: 60px;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .logo-subtitle {
+    font-size: 25px;
+    font-weight: 500;
+    margin-top: 0.5rem;
+  }
+  
+  .form-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0 auto;
+    background-color: #3ba8be;
+    padding: 2rem;
+    padding-right: 64px;
+    padding-bottom: 55px;
+    border-radius: 30px;
+  }
+
+  .title-section {
+    margin: 0;
+    margin-top: 35px;
+  }
+  
+  .form-section h2 {
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 30px;
+    font-weight: 500;
+    color: white;
+  }
+  
+  .form-section p {
+    margin-top: 0;
+    color: white;
+  }
+  
+  .form-section a {
+    color: white;
+    text-decoration: underline;
+  }
+
+  .form-section form {
+    margin-top: 30px;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 49px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+  
+  input {
+    flex: 1;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  button {
+    background-color: white;
+    color: #3ba8be;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-family: 'Outfit';
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  
+  button:hover {
+    background-color: #e0f7fb;
+  }

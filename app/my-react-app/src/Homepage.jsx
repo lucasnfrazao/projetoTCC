@@ -1,6 +1,6 @@
 import Card from './Card.jsx';
-import './homepage.css';
 import homeIcon from './assets/svg-home.svg';
+import './homepage.css';
 
 function HomePage() {
     return (

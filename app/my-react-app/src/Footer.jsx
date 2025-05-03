@@ -12,7 +12,7 @@ function Footer() {
                     </section>
 
                     <section className="link-area">
-                        <ul> 
+                        <ul className="link-list"> 
                             <li>Início</li>
                             <li>Vestibulares</li>
                             <li>Perfil do Estudante</li>

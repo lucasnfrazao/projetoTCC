@@ -25,14 +25,8 @@ const styles = {
   header: {
     backgroundColor: '#00AFC2',
     padding: '20px',
-    // paddingLeft: '40px',
-    // paddingRight: '40px',
     margin: '0',
-    color: 'white',
-    // display: 'flex',
-    // alignItems: 'center',
-    // justifyContent: 'space-between',
-    // alignContent: 'center'
+    color: 'white'
   },
   headerContent: {
     display: 'flex',
