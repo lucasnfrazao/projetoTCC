@@ -3,7 +3,7 @@ import './customInput.css';
 
 function CustomInput({ name, title, type, onChange, value }) {
     return (
-        <div class="customInput">
+        <div className="customInput">
             <p>{title}</p>
             <input id={name} name={name} type={type} onChange={onChange} required />
         </div>

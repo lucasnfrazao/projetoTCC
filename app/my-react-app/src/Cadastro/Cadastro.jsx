@@ -3,10 +3,8 @@ import CustomInput from '../CustomInput/CustomInput.jsx';
 import LogoComponent from '../LogoComponent/LogoComponent.jsx';
 import './cadastro.css';
 
-import axios from 'axios';
-import { useState } from 'react';
-
 import api from '../services/api';
+import { useState } from 'react';
 import { login as salvarToken } from '../services/authService';
 
 function Cadastro() {
@@ -46,7 +44,7 @@ function Cadastro() {
             <div class="form-section">
                 <section class="title-section">
                     <h2>Criar Conta</h2>
-                    <p>Já tem uma conta? <a href="#">Entre aqui.</a></p>
+                    <p>Já tem uma conta? <a href="/login">Entre aqui.</a></p>
                 </section>
                 <form onSubmit={handleSubmit}>
                     <div class="form-row">

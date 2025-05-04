@@ -1,21 +1,27 @@
 import Card from '../Card.jsx';
 import homeIcon from '../assets/svg-home.svg';
+import { jwtDecode } from 'jwt-decode';
+
 import './homepage.css';
 
 function HomePage() {
+    function handlePress() {
+      const token = localStorage.getItem('token');
+      const decoded = jwtDecode(token);
+
+      const id = decoded.id;
+      console.log(id);
+    }
+
     return (
       <div className="homepage">
         <section className="hero">
           <div className="hero-text">
             <h1 className="hero-title">O Futuro é seu.<br />A gente só mostra o caminho.</h1>
-            <button className="cta-button">Encontrar Universidades</button>
+            <button className="cta-button" onClick={handlePress}>Encontrar Universidades</button>
           </div>
           <img src= {homeIcon} alt="graphic" className="hero-image" />
         </section>
-  
-        {/* <section className="search">
-          <input type="text" placeholder="Procure por nome da universidade" />
-        </section> */}
 
         <hr className="divider"/>
   
