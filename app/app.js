@@ -11,6 +11,10 @@ import universidadeRoutes from './routes/universidadeRoutes.js';
 const { Schema } = mongoose;
 const app = express();
 app.use(express.json());
+
+import cors from 'cors';
+app.use(cors());
+
 const PORT = 4000;
 
 // MongoDB connection

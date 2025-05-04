@@ -5,6 +5,8 @@ import userService from '../services/userService.js';
 const registerStudentUser = async (req, res) => {
     const {name, lastName, email, password, confirmPassword} = req.body;
 
+    console.log(req.body)
+    
     if (!name) {
         return res.status(422).json({msg: 'O nome é obrigatório'});
     }

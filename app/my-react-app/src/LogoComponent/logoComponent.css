@@ -1,0 +1,22 @@
+.logo-section {
+    max-width: 340px;
+    color: #3ba8be;
+    text-align: left;
+}
+
+.logo-icon {
+    width: 60px;
+    margin-bottom: 0.5rem;
+}
+
+.logo-title {
+    font-size: 60px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.logo-subtitle {
+    font-size: 25px;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}

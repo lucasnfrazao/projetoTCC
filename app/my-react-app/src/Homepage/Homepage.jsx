@@ -1,5 +1,5 @@
-import Card from './Card.jsx';
-import homeIcon from './assets/svg-home.svg';
+import Card from '../Card.jsx';
+import homeIcon from '../assets/svg-home.svg';
 import './homepage.css';
 
 function HomePage() {

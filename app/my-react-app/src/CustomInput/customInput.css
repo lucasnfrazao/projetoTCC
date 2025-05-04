@@ -9,14 +9,11 @@
 }
 
 .customInput input {
-    margin: 0px;
-}
-
-input {
+    margin-top: 2px;
     flex: 1;
     width: 220px;
     padding: 0.5rem;
-    border: none;
+    border: 1px solid #14000000;
     border-radius: 0.5rem;
     font-size: 1rem;
 }
