@@ -14,9 +14,10 @@ const createUser = (req, res) => {
   res.status(201).json(newUser);
 };
 
-const getUserById = (req, res) => {
-  const user = userService.getUserById(req.params.id);
+const getUserById = async (req, res) => {
+  const user = await userService.getUserById(req.params.id);
   if (user) {
+    console.log(user);
     res.json(user);
   } else {
     res.status(404).json({ message: 'User not found' });

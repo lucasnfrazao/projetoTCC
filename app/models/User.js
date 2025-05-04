@@ -35,8 +35,10 @@ const createUser = async (data) => {
 }
 
 const findUserById = async (id) => {
-    console.log(id);
-    return await User.findById(id);
+    const user = await User.findById(id);
+    const userObj = user.toObject();
+    delete userObj.password;
+    return userObj
 }
 
 const findUserWithEmail = (email) => {

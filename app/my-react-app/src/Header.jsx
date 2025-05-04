@@ -1,14 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { getToken } from './services/authService.js';
+import { jwtDecode } from 'jwt-decode';
+import api from './services/api';
 
 function Header() {
+  useEffect(() => {
+    checkIfUserIsLoggedIn();
+  }, []);
+
+  async function checkIfUserIsLoggedIn() {
+      const token = getToken();
+      const decoded = jwtDecode(token);
+      const id = decoded.id;
+      const userModel = await api.get(`user/${id}`);
+      console.log(JSON.stringify(userModel.data));
+  }
+
   return (
     <header style={styles.header}>
       <div style={styles.headerContent}>
-        <h1 style={styles.title}>Vestibulário</h1>
+        <h1 style={styles.title}><a href="/">Vestibulário</a></h1>
         <nav>
           <div>
           <ul style={styles.navList}>
-            <li><a href="/inicio" style={styles.link}>Início</a></li>
+            <li><a href="/" style={styles.link}>Início</a></li>
             <li><a href="/vestibulares" style={styles.link}>Vestibulares</a></li>
           </ul>
           </div>

@@ -6,8 +6,11 @@ import LogoComponent from '../LogoComponent/LogoComponent.jsx';
 import api from '../services/api';
 import { useState } from 'react';
 import { login as salvarToken } from '../services/authService';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
+    let navigate = useNavigate();
+
     const [formData, setFormData] = useState({
         email: '',
         password: ''
@@ -27,7 +30,9 @@ function Login() {
         try {
             const response = await api.post('auth/login', formData);        
             salvarToken(response.data.token);
-            alert(JSON.stringify(response.data));
+            // alert(JSON.stringify(response.data));
+            
+            navigate(`/`);
         } catch (err) {
             alert(err);
         }
