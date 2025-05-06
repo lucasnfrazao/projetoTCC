@@ -1,19 +1,25 @@
-import React, { useEffect } from 'react';
-import { getToken } from './services/authService.js';
-import { jwtDecode } from 'jwt-decode';
-import api from './services/api.js';
+import React from 'react';
+
+import { useAuth } from './hooks/useAuth';
+import { Link } from 'react-router-dom';
 
 function Header() {
-  useEffect(() => {
-    checkIfUserIsLoggedIn();
-  }, []);
+  const { isAuthenticated, user } = useAuth();
 
-  async function checkIfUserIsLoggedIn() {
-      const token = getToken();
-      const decoded = jwtDecode(token);
-      const id = decoded.id;
-      const userModel = await api.get(`user/${id}`);
-      console.log(JSON.stringify(userModel.data));
+  function renderAutenticado() {
+    return (
+      <div style={styles.login}>
+        <Link to="/perfil">Olá, {user.msg}</Link>
+      </div>
+    )
+  }
+
+  function renderSemLogin() {
+    return (
+      <div style={styles.login}>
+        <button style={styles.loginButton}><a href="/login">Entrar</a></button>
+      </div>
+    )
   }
 
   return (
@@ -28,9 +34,7 @@ function Header() {
           </ul>
           </div>
         </nav>
-        <div style={styles.login}>
-              <button style={styles.loginButton}><a href="/login">Entrar</a></button>
-        </div>
+        {isAuthenticated ? renderAutenticado() : renderSemLogin() }
       </div>
     </header>
   );

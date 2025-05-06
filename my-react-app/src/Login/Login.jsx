@@ -6,9 +6,12 @@ import LogoComponent from '../LogoComponent/LogoComponent.jsx';
 import api from '../services/api.js';
 import { useState } from 'react';
 import { login as salvarToken } from '../services/authService.js';
+import { useAuth } from '../hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
+    const { login } = useAuth();
+
     let navigate = useNavigate();
 
     const [formData, setFormData] = useState({
@@ -18,7 +21,6 @@ function Login() {
 
     function handleChange(e) {
         const { name, value } = e.target;
-        console.log('↪️ Campo alterado:', name, value);
         setFormData((prev) => ({
           ...prev,
           [name]: value
@@ -29,9 +31,7 @@ function Login() {
         e.preventDefault();
         try {
             const response = await api.post('auth/login', formData);        
-            salvarToken(response.data.token);
-            // alert(JSON.stringify(response.data));
-            
+            login(response.data, response.data.token);
             navigate(`/`);
         } catch (err) {
             alert(err);
