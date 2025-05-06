@@ -3,9 +3,9 @@ import React from 'react';
 import CustomInput from '../CustomInput/CustomInput.jsx';
 import LogoComponent from '../LogoComponent/LogoComponent.jsx';
 
-import api from '../services/api';
+import api from '../services/api.js';
 import { useState } from 'react';
-import { login as salvarToken } from '../services/authService';
+import { login as salvarToken } from '../services/authService.js';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {

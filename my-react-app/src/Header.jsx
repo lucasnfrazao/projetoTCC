@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { getToken } from './services/authService.js';
 import { jwtDecode } from 'jwt-decode';
-import api from './services/api';
+import api from './services/api.js';
 
 function Header() {
   useEffect(() => {
