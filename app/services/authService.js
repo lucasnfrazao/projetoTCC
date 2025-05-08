@@ -49,8 +49,7 @@ const registerStudentUser = async (req, res) => {
     const user = await userService.createUser(userObject);
   
     try {
-      //await user.save()
-      res.status(201).json({msg: 'Usuario criado com sucesso'})
+      res.status(201).json({ msg: 'Usuario criado com sucesso' })
     } catch(error) {
       res.status(500).json({msg: error})
     }
@@ -81,23 +80,46 @@ const loginUser = async (req, res) => {
         return res.status(404).json({msg: 'Senha inválida'});
     }
   
+    const JWT_SECRET = process.env.SECRET
+    const JWT_EXPIRES_IN = '1h'
+
     try {
-      const secret = process.env.SECRET;
-      console.log(secret);
-      const token = jwt.sign({
-        id: user._id
-      },
-      secret
-    )
-  
-    res.status(200).json({msg: 'Autenticado com sucesso', token: token});
+        console.log(JWT_SECRET);
+        const token = jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: JWT_EXPIRES_IN })
+        res.status(200).json({ token: token });
     } catch(error){
       console.log(error);
       res.status(500).json({msg: error});
     }
 }
 
+export function authenticate(req, res, next) {
+    const JWT_SECRET = process.env.SECRET
+
+    const auth = req.headers.authorization
+    if (!auth?.startsWith('Bearer '))
+        return res.status(401).json({ message: 'Missing token' })
+
+    const token = auth.split(' ')[1]
+    try {
+        const payload = jwt.verify(token, JWT_SECRET)
+        req.user = payload        // { sub: user.id, role: …, iat, exp }
+        next()
+    } catch (err) {
+        return res.status(401).json({ message: 'Invalid or expired token' })
+    }
+}
+
+const getCurrentUserUsingToken = async (req, res) => {
+    const userId = req.user.id
+    const user = await userService.getUserById(userId)
+    if (!user) return res.status(404).end()
+    res.json(user)
+}
+
 export default {
     registerStudentUser,
+    getCurrentUserUsingToken,
+    authenticate,
     loginUser
 }

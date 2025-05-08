@@ -9,7 +9,7 @@ function Header() {
   function renderAutenticado() {
     return (
       <div style={styles.login}>
-        <Link to="/perfil">Olá, {user.msg}</Link>
+        <Link to="/perfil">Olá, {user.name}</Link>
       </div>
     )
   }

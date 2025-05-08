@@ -5,7 +5,6 @@ import './cadastro.css';
 
 import api from '../services/api';
 import { useState } from 'react';
-import { login as salvarToken } from '../services/authService';
 
 function Cadastro() {
     const [formData, setFormData] = useState({
@@ -18,7 +17,7 @@ function Cadastro() {
 
     function handleChange(e) {
         const { name, value } = e.target;
-        console.log('↪️ Campo alterado:', name, value);
+        // console.log('↪️ Campo alterado:', name, value);
         setFormData((prev) => ({
           ...prev,
           [name]: value
@@ -27,11 +26,11 @@ function Cadastro() {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        console.log(JSON.stringify(formData, null, 2));
+        //console.log(JSON.stringify(formData, null, 2));
         try {
             const response = await api.post('auth/register', formData)         
             console.log(response);
-            alert(JSON.stringify(response.data));
+            // TODO: Fazer login automaticamente e navegar para rota /perfil.
         } catch (err) {
             alert(err);
         }

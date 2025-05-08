@@ -7,10 +7,10 @@ import './homepage.css';
 function HomePage() {
     function handlePress() {
       const token = localStorage.getItem('token');
-      const decoded = jwtDecode(token);
+      // const decoded = jwtDecode(token);
 
-      const id = decoded.id;
-      console.log(id);
+      // const id = decoded.id;
+      // console.log(id);
     }
 
     return (

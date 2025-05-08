@@ -1,7 +1,9 @@
 import mongoose from 'mongoose';
 import express from 'express';
 import jwt from 'jsonwebtoken';
+
 import dotenv from 'dotenv';
+dotenv.config();
 
 import userService from './services/userService.js';
 import userRoutes from './routes/userRoutes.js';
@@ -20,8 +22,7 @@ const PORT = 4000;
 // MongoDB connection
 async function main() {
 
-  /// Usado para carregar .env file
-  dotenv.config();
+  
 
   const mongoURI = `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@127.0.0.1:27017/vestibulario?authSource=admin`
   

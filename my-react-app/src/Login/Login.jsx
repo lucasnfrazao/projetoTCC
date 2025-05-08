@@ -5,7 +5,6 @@ import LogoComponent from '../LogoComponent/LogoComponent.jsx';
 
 import api from '../services/api.js';
 import { useState } from 'react';
-import { login as salvarToken } from '../services/authService.js';
 import { useAuth } from '../hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 

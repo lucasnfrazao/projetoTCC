@@ -11,7 +11,6 @@ const createUser = (data) => {
 };
 
 const getUserById = async (id) => {
-  console.log(id);
   return await userModel.findUserById(id);
 };
 
