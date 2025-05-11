@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from "react-router";
 import UniversidadeProfilePage from './UniversidadeProfilePage'
+import { API_BASE } from '../config.js';
 
 export default function UniversidadePage() {
   const { id } = useParams();
@@ -11,7 +12,10 @@ export default function UniversidadePage() {
 
   useEffect(() => {
     setLoading(true)
-    fetch(`http://localhost:4000/universidades/${id}`)
+
+    const apiURL =  `${API_BASE}/universidades/${id}`;
+    console.log(apiURL);
+    fetch(apiURL)
       .then(res => {
         if (!res.ok) throw new Error('Not found')
         return res.json()

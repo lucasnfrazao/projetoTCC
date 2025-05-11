@@ -1,0 +1,66 @@
+.container {
+    display: flex;
+    max-width: 1200px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 3rem;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.formSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0 auto;
+    background-color: #00AFC2;
+    padding-left: 75px;
+    padding-right: 58px;
+    padding-top: 60px;
+    padding-bottom: 80px;
+    border-radius: 30px;
+}
+
+.titleSection {
+    margin: 0;
+}
+
+.formSection h2 {
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 30px;
+    font-weight: 500;
+    color: white;
+}
+
+.formSection p {
+    margin-top: 0;
+    color: white;
+}
+
+.formSection a {
+    color: white;
+    text-decoration: underline;
+}
+
+.formRow {
+    margin-top: 20px;
+    margin-bottom: 22px;
+}
+
+.button {
+    background-color: white;
+    color: #00AFC2;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-family: 'Outfit';
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.button:hover {
+    background-color: #e0f7fb;
+}

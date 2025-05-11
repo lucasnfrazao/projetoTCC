@@ -1,5 +1,4 @@
 import styles from './Login.module.css';
-import React from 'react';
 import CustomInput from '../CustomInput/CustomInput.jsx';
 import LogoComponent from '../LogoComponent/LogoComponent.jsx';
 

@@ -1,6 +1,5 @@
 import Card from '../Card.jsx';
 import homeIcon from '../assets/svg-home.svg';
-import { jwtDecode } from 'jwt-decode';
 
 import './homepage.css';
 
@@ -26,9 +25,9 @@ function HomePage() {
         <hr className="divider"/>
   
         <section className="cards-section">
-          <h2 className="card-header">Próximos Vestibulares</h2>
+          <h2 className="card-header">Universidades</h2>
           <div className="card-list">
-            <Card title="PUC-Rio" />
+            <Card id={"67fabf1c01763bd7ff4e97dd"} title="PUC-Rio" />
             <Card title="PUC-RS" />
             <Card title="PUC-SP" />
           </div>
