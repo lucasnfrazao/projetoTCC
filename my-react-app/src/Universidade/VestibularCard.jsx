@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from './UniversidadePage.module.css'
 
-export default function VestibularCard({ data, onClick }) {
-    const statusColor = data.status === 'Aberto' ? '#2EC4B6' : '#333'
+export default function VestibularCard({ vestibular, onClick }) {
+    const proximoEvento = vestibular.datas[0];
 
     return (
         <div
@@ -11,20 +11,21 @@ export default function VestibularCard({ data, onClick }) {
             style={{ cursor: onClick ? 'pointer' : 'default' }}
         >
             <div className={styles.cardHeader}>
-                <h3>{data.title}</h3>
+                <h3>{vestibular.nome}</h3>
                 <span
                     className={styles.statusBadge}
-                    style={{ backgroundColor: statusColor }}
+                    //style={{ backgroundColor: statusColor }}
                 >
-                    {data.status}
+                    {/* {data.status} */}
                 </span>
             </div>
             <ul className={styles.detailsList}>
                 <li>
-                    <input type="checkbox" disabled /> Inscrição: até {data.inscriptionDeadline}
+                    <p> Próximo Evento: {proximoEvento.titulo} </p>
+                    <p> Data: {proximoEvento.data} </p>
                 </li>
                 <li>
-                    <input type="checkbox" disabled /> Prova: {data.examDate}
+                    {/* <input type="checkbox" disabled /> Prova: {vestibular.examDate} */}
                 </li>
             </ul>
             <button className={styles.infoBtn}>Mais Informações</button>

@@ -1,84 +1,38 @@
-import React, { useState } from 'react'
-import UniversityHeader from './UniversidadeHeader'
-import SidebarTabs from './BarraLateral'
-import VestibularesSection from './VestibularesSection'
-import CursosSection from './CursosSection.jsx'
-import styles from './UniversidadePage.module.css'
-
-// Dados falsos para teste
-const university = {
-  type: 'Particular',
-  name: 'Pontifícia Universidade Católica do Rio de Janeiro',
-  location: 'Rio de Janeiro, RJ',
-  followers: 1320,
-  coverImageUrl: '/images/puc-rj.jpg',
-}
-
-const vestibulares = [
-  {
-    id: 1,
-    title: 'Vestibular de Inverno 2026',
-    inscriptionDeadline: '15/08',
-    examDate: '01/10',
-    status: 'Aberto',
-  },
-  {
-    id: 2,
-    title: 'Vestibular de Inverno 2025',
-    inscriptionDeadline: '15/08',
-    examDate: '01/10',
-    status: 'Encerrado',
-  },
-]
-
-const courses = [
-  'Administração',
-  'Arquitetura e Urbanismo',
-  'Artes Cênicas',
-  'Ciência da Computação',
-  'Ciências Biológicas',
-  'Ciências Econômicas',
-  'Ciências Sociais',
-  'Design (Comunicação Visual, Mídia Digital, Moda, Projeto de Produto)',
-  'Direito (Diurno e Noturno)',
-  'Educação (Pedagogia)',
-  'Engenharia Ambiental',
-  'Engenharia Civil',
-  'Engenharia de Computação',
-  'Engenharia de Controle e Automação',
-  'Engenharia de Materiais e Nanotecnologia',
-  'Engenharia de Petróleo',
-]
+import React, { useEffect, useState } from 'react'
+import { useParams } from "react-router";
+import UniversidadeProfilePage from './UniversidadeProfilePage'
 
 export default function UniversidadePage() {
-  const [activeTab, setActiveTab] = useState('Vestibulares')
+  const { id } = useParams();
+
+  const [university, setUniversity] = useState(null)
+  const [loading, setLoading]     = useState(true)
+  const [error, setError]         = useState(null)
+
+  useEffect(() => {
+    setLoading(true)
+    fetch(`http://localhost:4000/universidades/${id}`)
+      .then(res => {
+        if (!res.ok) throw new Error('Not found')
+        return res.json()
+      })
+      .then(data => {
+        setUniversity(data)
+        setError(null)
+      })
+      .catch(err => {
+        console.error(err)
+        setError(err)
+      })
+      .finally(() => setLoading(false))
+  }, [id])
+
+  // TODO: Handle loading + error -> caso universidade doesn't exist.
+
+  if (loading) return <p>Carregando…</p>
+  if (error)   return <p>Erro: {error.message}</p>
 
   return (
-    <div className={styles.page}>
-      <UniversityHeader university={university} />
-
-      <div className={styles.main}>
-        <SidebarTabs
-          tabs={['Vestibulares', 'Cursos', 'Sobre']}
-          activeTab={activeTab}
-          onTabClick={setActiveTab}
-        />
-
-        {activeTab === 'Vestibulares' && (
-          <VestibularesSection
-            vestibulares={vestibulares}
-          />
-        )}
-        {activeTab === 'Cursos' && (
-          <CursosSection courses={courses} />
-        )}
-        {activeTab === 'Sobre' && (
-          <div className={styles.sobre}>
-            <h2>Sobre a Universidade</h2>
-            <p>…conteúdo sobre a uni…</p>
-          </div>
-        )}
-      </div>
-    </div>
+    <UniversidadeProfilePage university={university} />
   )
 }

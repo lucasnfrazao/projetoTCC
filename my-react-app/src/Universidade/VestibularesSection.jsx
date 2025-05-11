@@ -7,13 +7,13 @@ export default function VestibularesSection({ vestibulares, onSelect }) {
     <section className={styles.vestibularesSection}>
       <h2 className={styles.vestibularHeader}>Vestibulares</h2>
       <div className={styles.cardsGrid}>
-        {vestibulares.map(v => (
+        { vestibulares.map( (vestibular, index) => 
           <VestibularCard
-            key={v.id}
-            data={v}
-            onClick={() => onSelect && onSelect(v)}
+            key={index}
+            vestibular={vestibular}
+            onClick={() => onSelect && onSelect(vestibular)}
           />
-        ))}
+        )}
       </div>
     </section>
   )

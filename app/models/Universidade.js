@@ -7,6 +7,7 @@ const universidadeSchema = new Schema({
     descricao: String,
     cidade: String,
     uf: String,
+    coverImageURL: String,
     cursos: [],
     vestibulares: [],
     usuariosSeguindo: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }]

@@ -12,7 +12,7 @@ function AppRoutes() {
       <Route path="/" element={<Homepage />} />
       <Route path="/registro" element={<Cadastro />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/universidade" element={<UniversidadePage />} />
+      <Route path="/universidade/:id" element={<UniversidadePage />} />
 
       {/* Protected route */}
       <Route

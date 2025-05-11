@@ -25,6 +25,7 @@ const getListaDeCursos = async (req, res) => {
 
 const getListaDeVestibulares = async (req, res) => {
     const id = req.params.id;
+    console.log(id);
 
     if (id === null) {
         res.status(404).json({msg: 'id inválido'});
@@ -42,8 +43,17 @@ const getListaDeVestibulares = async (req, res) => {
 };
 
 const getUniversidadeWithId = async (req, res) => {
-    const id = req.body;
-    return universidadeService.getUniversidadeWithId(id);
+    const id = req.params.id;
+    
+    const universidadeModel = await universidadeService.getUniversidadeWithId(id);
+
+    if (!universidadeModel) {
+        res.status(404);
+        return
+    }
+
+    console.log(universidadeModel);
+    res.status(200).json(universidadeModel);
 };
 
 const createUniversidade = async (req, res) => {
