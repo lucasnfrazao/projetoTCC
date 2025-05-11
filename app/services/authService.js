@@ -80,12 +80,11 @@ const loginUser = async (req, res) => {
         return res.status(404).json({msg: 'Senha inválida'});
     }
   
-    const JWT_SECRET = process.env.SECRET
-    const JWT_EXPIRES_IN = '1h'
+    const JWT_SECRET = process.env.SECRET;
 
     try {
-        console.log(JWT_SECRET);
-        const token = jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: JWT_EXPIRES_IN })
+        // TODO: Add expiration date back.
+        const token = jwt.sign({ id: user._id }, JWT_SECRET)
         res.status(200).json({ token: token });
     } catch(error){
       console.log(error);
@@ -103,7 +102,7 @@ export function authenticate(req, res, next) {
     const token = auth.split(' ')[1]
     try {
         const payload = jwt.verify(token, JWT_SECRET)
-        req.user = payload        // { sub: user.id, role: …, iat, exp }
+        req.user = payload
         next()
     } catch (err) {
         return res.status(401).json({ message: 'Invalid or expired token' })
