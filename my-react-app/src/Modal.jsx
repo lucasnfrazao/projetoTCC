@@ -10,9 +10,9 @@ export default function Modal({ isOpen, onClose, children }) {
   return ReactDOM.createPortal(
     <div className="modalOverlay" onClick={onClose}>
       <div className="modalContent" onClick={(e) => e.stopPropagation()}>
-        <button className="modalClose" onClick={onClose}>
+        {/* <button className="modalClose" onClick={onClose}>
           &times;
-        </button>
+        </button> */}
         {children}
       </div>
     </div>,

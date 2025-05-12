@@ -231,3 +231,55 @@
     color: #333;
     border-radius: 8px;
 }
+
+/* Modal */
+.modalWrapper {
+    overflow: hidden;
+    width: 942px;
+    padding: 0px;
+    margin: 0px;
+    
+}
+
+.modalHeader {
+    overflow: hidden;
+    background-color: #00AFC2;
+}
+
+.modalHeaderContent {
+    padding: 70px 48px 70px 48px;
+}
+
+.modalHeaderContent h2 {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 500;
+    margin: 0px 0px 17px 0px;
+}
+
+.modalHeaderContent h3 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0px 0px 40px 0px;
+}
+
+.modalHeaderContent span {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    background-color: #00818F;
+    padding: 6px 40px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.modalContentArea {
+    padding: 30px 48px 70px 48px;
+}
+
+.modalContentArea h2 {
+    color: #4A4545;
+    font-size: 25px;
+    font-weight: 500;
+}

@@ -1,11 +1,16 @@
-import React, { useState } from 'react'
-import UniversityHeader from './UniversidadeHeader'
-import SidebarTabs from './BarraLateral'
-import VestibularesSection from './VestibularesSection'
-import CursosSection from './CursosSection.jsx'
+import React, { useState } from 'react';
+import UniversityHeader from './UniversidadeHeader';
+import SidebarTabs from './BarraLateral';
+import VestibularesSection from './VestibularesSection';
+import CursosSection from './CursosSection.jsx';
 import Modal from "../Modal";
+import VestibularModal from "./VestibularModal.jsx";
+
 import styles from './UniversidadePage.module.css'
 
+const vestibular = {
+    titulo: "Vestibular de Inverno 2026"
+}
 
 export default function UniversidadeProfilePage(university) {
   const [activeTab, setActiveTab] = useState('Vestibulares')
@@ -48,7 +53,7 @@ export default function UniversidadeProfilePage(university) {
               </div>
           </div>
           <Modal isOpen={isModalOpen} onClose={ () => setIsModalOpen(false)}>
-              <p>Modal Content!</p>
+              <VestibularModal vestibular={vestibular} universidadeNome={"Pontifícia Universidade Católica do Rio de Janeiro"} />
           </Modal>
       </>
   )
