@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import UniversityHeader from './UniversidadeHeader';
-import SidebarTabs from './BarraLateral';
-import VestibularesSection from './VestibularesSection';
+import UniversityHeader from './UniversidadeHeader.jsx';
+import SidebarTabs from './BarraLateral.jsx';
+import VestibularesSection from './VestibularesSection.jsx';
 import CursosSection from './CursosSection.jsx';
-import Modal from "../Modal";
+import Modal from "../Modal.jsx";
 import VestibularModal from "./VestibularModal.jsx";
 
 import styles from './UniversidadePage.module.css'

@@ -3,7 +3,7 @@ import CustomInput from '../CustomInput/CustomInput.jsx';
 import LogoComponent from '../LogoComponent/LogoComponent.jsx';
 import './cadastro.css';
 
-import api from '../services/api';
+import api from '../services/api.js';
 import { useState } from 'react';
 
 function Cadastro() {

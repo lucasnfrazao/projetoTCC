@@ -4,7 +4,7 @@ import LogoComponent from '../LogoComponent/LogoComponent.jsx';
 
 import api from '../services/api.js';
 import { useState } from 'react';
-import { useAuth } from '../hooks/useAuth';
+import { useAuth } from '../hooks/useAuth.js';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {

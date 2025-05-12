@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import express from 'express';
 import jwt from 'jsonwebtoken';
+import cors from 'cors';
 
 import dotenv from 'dotenv';
 dotenv.config();
@@ -13,16 +14,12 @@ import universidadeRoutes from './routes/universidadeRoutes.js';
 const { Schema } = mongoose;
 const app = express();
 app.use(express.json());
-
-import cors from 'cors';
 app.use(cors());
 
 const PORT = 4000;
 
 // MongoDB connection
 async function main() {
-
-  
 
   const mongoURI = `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@127.0.0.1:27017/vestibulario?authSource=admin`
   
@@ -34,9 +31,9 @@ async function main() {
 main().catch(err => console.log(err));
 
 // Public Route
-app.get('/', (req, res) => {
-  res.send('Hello from Node.js with MongoDB!');
-});
+// app.get('/', (req, res) => {
+//   res.send('Hello from Node.js with MongoDB!');
+// });
 
 app.use('/user', userRoutes);
 app.use('/auth', authRoutes);
@@ -46,6 +43,7 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
+/*
 // Middleware
 function checkToken(req, res, next) {
   const authHeader = req.headers['authorization'];
@@ -66,8 +64,6 @@ function checkToken(req, res, next) {
     res.status(400).json({msg: 'Token Inválido'});
   }
 }
-
-// TODO: Criar Middleware para Admin
 
 async function checkIfAdmin(req, res, next)  {
   const authHeader = req.headers['authorization'];
@@ -94,3 +90,4 @@ async function checkIfAdmin(req, res, next)  {
     res.status(403).json({ error: 'Invalid token' });
   }
 };
+*/

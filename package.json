@@ -5,6 +5,6 @@
   "scripts": {
   "start": "concurrently \"npm run server\" \"npm run client\"",
   "server": "cd app && npm start",
-  "client": "cd my-react-app && npm start"
+  "client": "cd vestibulario-react && npm start"
 }
 }

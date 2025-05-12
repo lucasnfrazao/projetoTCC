@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from "react-router";
-import UniversidadeProfilePage from './UniversidadeProfilePage'
+import UniversidadeProfilePage from './UniversidadeProfilePage.jsx'
 import { API_BASE } from '../config.js';
 
 export default function UniversidadePage() {
