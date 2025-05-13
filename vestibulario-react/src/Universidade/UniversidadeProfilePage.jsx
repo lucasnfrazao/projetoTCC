@@ -9,7 +9,40 @@ import VestibularModal from "./VestibularModal.jsx";
 import styles from './UniversidadePage.module.css'
 
 const vestibular = {
-    titulo: "Vestibular de Inverno 2026"
+    titulo: "Vestibular de Inverno 2026",
+    datas: [
+        {
+        titulo: "Inscrição",
+        startDate: "2025-05-12T23:45:00.123Z",
+        endDate: "2025-05-12T23:45:00.123Z"
+        },
+        {
+        titulo: "Divulgação dos locais de prova",
+        startDate: "2025-05-12T23:45:00.123Z",
+        endDate: "2025-05-12T23:45:00.123Z"
+        },
+        {
+        titulo: "Provas presenciais",
+        startDate: "2025-05-12T23:45:00.123Z",
+        endDate: "2025-05-12T23:45:00.123Z"
+        },
+        {
+        titulo: "Gabaritos",
+        startDate: "2025-05-12T23:45:00.123Z",
+        endDate: "2025-05-12T23:45:00.123Z"
+        },
+        {
+        titulo: "Notas das provas",
+        startDate: "2025-05-12T23:45:00.123Z",
+        endDate: "2025-05-12T23:45:00.123Z"
+        }
+        ,
+        {
+        titulo: "Resultados Finais",
+        startDate: "2025-05-12T23:45:00.123Z",
+        endDate: "2025-05-12T23:45:00.123Z"
+        }
+]
 }
 
 export default function UniversidadeProfilePage(university) {
@@ -18,7 +51,6 @@ export default function UniversidadeProfilePage(university) {
 
     function onVestibularClick() {
         setIsModalOpen(true);
-        console.log("modal opening");
     }
 
   return (

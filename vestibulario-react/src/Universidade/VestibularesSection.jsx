@@ -1,4 +1,3 @@
-import React from 'react'
 import VestibularCard from './VestibularCard'
 import styles from './UniversidadePage.module.css'
 

@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from './UniversidadePage.module.css'
 
 export default function VestibularCard({ vestibular, onClick }) {
@@ -23,9 +22,6 @@ export default function VestibularCard({ vestibular, onClick }) {
                 <li>
                     <p> Próximo Evento: {proximoEvento.titulo} </p>
                     <p> Data: {proximoEvento.data} </p>
-                </li>
-                <li>
-                    {/* <input type="checkbox" disabled /> Prova: {vestibular.examDate} */}
                 </li>
             </ul>
             <button className={styles.infoBtn}>Mais Informações</button>

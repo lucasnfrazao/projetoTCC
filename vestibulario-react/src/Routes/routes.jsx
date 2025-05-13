@@ -5,26 +5,29 @@ import Login from '../Login/Login.jsx';
 import Perfil from '../Perfil/Perfil.jsx';
 import UniversidadePage from '../Universidade/UniversidadePage.jsx';
 import PrivateRoute from './PrivateRoute.jsx';
+import styles from './Routes.module.css'
 
 function AppRoutes() {
   return (
-    <Routes>
-      <Route path="/" element={<Homepage />} />
-      <Route path="/registro" element={<Cadastro />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/universidade/:id" element={<UniversidadePage />} />
+    <div className={styles.siteWrapper}>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/registro" element={<Cadastro />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/universidade/:id" element={<UniversidadePage />} />
 
-      {/* Protected route */}
-      <Route
-        path="/perfil"
-        element={
-          <PrivateRoute>
-            <Perfil />
-          </PrivateRoute>
-        }
-      />
+        {/* Protected route */}
+        <Route
+          path="/perfil"
+          element={
+            <PrivateRoute>
+              <Perfil />
+            </PrivateRoute>
+          }
+        />
 
-    </Routes>
+      </Routes>
+    </div>
   );
 }
 
