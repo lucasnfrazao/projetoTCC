@@ -18,7 +18,10 @@
     width: 150px;
     height: 150px;
     background-color: #fff;
+    border-style: solid;
     border-radius: 12px;
+    border-width: 2px;
+    border-color: #fff;
 }
 
 .profileInformationSection {
@@ -44,4 +47,9 @@
 
 .profileInformationSection button {
     margin-top: 20px;
+}
+
+.logoutButton {
+    background-color: #EB8135;
+    color: #fff;
 }

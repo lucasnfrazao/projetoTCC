@@ -30,7 +30,7 @@ function Header() {
           <div>
           <ul style={styles.navList}>
             <li><a href="/" style={styles.link}>Início</a></li>
-            <li><a href="/vestibulares" style={styles.link}>Vestibulares</a></li>
+            <li><a href="/universidades" style={styles.link}>Universidades</a></li>
           </ul>
           </div>
         </nav>
@@ -81,6 +81,7 @@ const styles = {
     alignItems: 'center'
   },
   loginButton: {
+    margin: '0',
     fontFamily: 'Outfit',
     padding: '4px 24px',
     borderRadius: '8px',

@@ -1,39 +1,76 @@
-import Card from '../Card.jsx';
+import Card from './Card.jsx';
 import homeIcon from '../assets/svg-home.svg';
+import { useNavigate } from 'react-router-dom';
+import { API_BASE } from '../config.js';
+import { useState, useEffect } from 'react';
 
-import './homepage.css';
+import styles from './Homepage.module.css';
 
 function HomePage() {
-    function handlePress() {
-      const token = localStorage.getItem('token');
-      // const decoded = jwtDecode(token);
 
-      // const id = decoded.id;
-      // console.log(id);
-    }
+  const [universities, setUniversities] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
-    return (
-      <div className="homepage">
-        <section className="hero">
-          <div className="hero-text">
-            <h1 className="hero-title">O Futuro é seu.<br />A gente só mostra o caminho.</h1>
-            <button className="cta-button" onClick={handlePress}>Encontrar Universidades</button>
-          </div>
-          <img src= {homeIcon} alt="graphic" className="hero-image" />
-        </section>
+  let navigate = useNavigate();
 
-        <hr className="divider"/>
-  
-        <section className="cards-section">
-          <h2 className="card-header">Universidades</h2>
-          <div className="card-list">
-            <Card id={"67fabf1c01763bd7ff4e97dd"} title="PUC-Rio" />
-            <Card title="PUC-RS" />
-            <Card title="PUC-SP" />
-          </div>
-        </section>
-      </div>
-    );
+  useEffect(() => {
+    setLoading(true)
+    const apiURL = `${API_BASE}/universidades`;
+    fetch(apiURL)
+      .then(res => {
+        if (!res.ok) throw new Error('Not found')
+        return res.json()
+      })
+      .then(data => {
+        setUniversities(data)
+        setError(null)
+      })
+      .catch(err => {
+        console.error(err)
+        setError(err)
+      })
+      .finally(() => setLoading(false))
+  }, [])
+
+  function handlePress() {
+    console.log(universities)
+    //navigate(`/universidades`)
+  }
+
+  const renderLoading = () => 
+    <div>Loading...</div>
+
+  let universidadeSection
+  if (loading) {
+    universidadeSection = renderLoading()
+  }
+  else {
+    universidadeSection = Object.values(universities).map( uni =>
+      <Card id={uni._id} title={uni.nome} img={uni.coverImageURL}/>
+    )
+  }
+
+  return (
+    <div className={styles.homepage}>
+      <section className={styles.hero}>
+        <div className={styles.heroText}>
+          <h1 className={styles.heroTitle}>O Futuro é seu.<br />A gente te mostra o caminho.</h1>
+          <button className={styles.ctaButton} onClick={handlePress}>Encontrar Universidades</button>
+        </div>
+        <img src={homeIcon} alt="graphic" className={styles.heroImage} />
+      </section>
+
+      <hr className={styles.divider} />
+
+      <section className={styles.cardsSection}>
+        <h2 className={styles.cardHeader}>Universidades</h2>
+        <div className={styles.cardList}>
+          { universidadeSection }
+        </div>
+      </section>
+    </div>
+  );
 }
 
 export default HomePage;
