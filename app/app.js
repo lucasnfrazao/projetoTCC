@@ -35,9 +35,7 @@ app.use('/user', userRoutes);
 app.use('/auth', authRoutes);
 app.use('/universidades', universidadeRoutes);
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+app.listen(PORT, 'localhost');
 
 /*
 // Middleware
