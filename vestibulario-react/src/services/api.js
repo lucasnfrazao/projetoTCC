@@ -2,7 +2,7 @@ import axios from 'axios';
 import { getToken } from './authService';
 
 const api = axios.create({
-  baseURL: 'http://localhost:4000',
+  baseURL: 'https://api.vestibulario.com',
 });
 
 api.interceptors.request.use((config) => {
