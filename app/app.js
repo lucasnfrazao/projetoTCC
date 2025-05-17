@@ -21,6 +21,7 @@ const PORT = 4000;
 // MongoDB connection
 async function main() {
 
+  //  const mongoURI = `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@127.0.0.1:27017/vestibulario?authSource=admin`
   const mongoURI = `mongodb+srv://lucasnfrazao:AxW7Ykyued8OL8On@vestibulariocluster.obehw4b.mongodb.net/vestibularioDB?retryWrites=true&w=majority&appName=VestibularioCluster`
   
   await mongoose.connect(mongoURI)
