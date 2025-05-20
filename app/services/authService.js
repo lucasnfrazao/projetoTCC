@@ -5,8 +5,6 @@ import userService from '../services/userService.js';
 const registerStudentUser = async (req, res) => {
     const {name, lastName, email, password, confirmPassword} = req.body;
 
-    console.log(req.body)
-    
     if (!name) {
         return res.status(422).json({msg: 'O nome é obrigatório'});
     }
@@ -16,9 +14,7 @@ const registerStudentUser = async (req, res) => {
     }
 
     const existingUser = await userService.getUserUsingEmail(email);
-
-    console.log(existingUser);
-
+    
     if (existingUser !== null) {
         return res.status(401).json({msg: 'Existing user...'});
     }
@@ -45,7 +41,7 @@ const registerStudentUser = async (req, res) => {
         password: passwordHash,
         role: role
     };
-    console.log(userObject);
+
     const user = await userService.createUser(userObject);
   
     try {
@@ -96,8 +92,9 @@ export function authenticate(req, res, next) {
     const JWT_SECRET = process.env.SECRET
 
     const auth = req.headers.authorization
-    if (!auth?.startsWith('Bearer '))
+    if (!auth?.startsWith('Bearer ')) {
         return res.status(401).json({ message: 'Missing token' })
+    }
 
     const token = auth.split(' ')[1]
     try {
@@ -105,7 +102,7 @@ export function authenticate(req, res, next) {
         req.user = payload
         next()
     } catch (err) {
-        return res.status(401).json({ message: 'Invalid or expired token' })
+        return res.status(401).json({ message: 'Token Expirado' })
     }
 }
 

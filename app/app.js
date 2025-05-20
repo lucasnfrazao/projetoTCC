@@ -3,9 +3,6 @@ import express from 'express';
 import jwt from 'jsonwebtoken';
 import cors from 'cors';
 
-import dotenv from 'dotenv';
-dotenv.config();
-
 import userService from './services/userService.js';
 import userRoutes from './routes/userRoutes.js';
 import authRoutes from './routes/authRoutes.js';
@@ -21,8 +18,10 @@ const PORT = 4000;
 // MongoDB connection
 async function main() {
 
-  //  const mongoURI = `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@127.0.0.1:27017/vestibulario?authSource=admin`
-  const mongoURI = `mongodb+srv://lucasnfrazao:AxW7Ykyued8OL8On@vestibulariocluster.obehw4b.mongodb.net/vestibularioDB?retryWrites=true&w=majority&appName=VestibularioCluster`
+  const mongoURI = process.env.MONGO_URI;
+  console.log(mongoURI);
+  //const mongoURI = `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@mongo:27017/vestibulario?authSource=admin`
+  //const mongoURI = `mongodb+srv://lucasnfrazao:AxW7Ykyued8OL8On@vestibulariocluster.obehw4b.mongodb.net/vestibularioDB?retryWrites=true&w=majority&appName=VestibularioCluster`
   
   await mongoose.connect(mongoURI)
     .then(() => console.log('MongoDB Connected'))
@@ -35,7 +34,8 @@ app.use('/user', userRoutes);
 app.use('/auth', authRoutes);
 app.use('/universidades', universidadeRoutes);
 
-app.listen(PORT, 'localhost');
+//app.listen(PORT, 'localhost');
+app.listen(PORT, '0.0.0.0');
 
 /*
 // Middleware

@@ -16,7 +16,7 @@ const getListaDeCursos = async (req, res) => {
     const cursos = await universidadeService.getListaDeCursos(id);
 
     if (cursos === null) {
-        res.status(404).json({msg: 'could not find cursos'});
+        res.status(404).json({msg: 'Curso não foi achado'});
         return
     }
 
@@ -25,7 +25,6 @@ const getListaDeCursos = async (req, res) => {
 
 const getListaDeVestibulares = async (req, res) => {
     const id = req.params.id;
-    console.log(id);
 
     if (id === null) {
         res.status(404).json({msg: 'id inválido'});
@@ -35,7 +34,7 @@ const getListaDeVestibulares = async (req, res) => {
     const vestibulares = await universidadeService.getListaDeVestibulares(id);
 
     if (vestibulares === null) {
-        res.status(404).json({msg: 'could not find cursos'});
+        res.status(404).json({msg: 'Vestibular não disponível'});
         return
     }
 

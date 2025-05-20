@@ -10,7 +10,8 @@ const universidadeSchema = new Schema({
     coverImageURL: String,
     cursos: [],
     vestibulares: [],
-    usuariosSeguindo: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }]
+    usuariosSeguindo: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
+    coverImageURL: String
 });
 
 const Universidade = mongoose.model('Universidade', universidadeSchema);
@@ -23,7 +24,8 @@ const createUniversidade = async (data) => {
     uf: data.uf, 
     cursos: data.cursos,
     vestibulares: data.vestibulares,
-    usuariosSeguindo: data.usuariosSeguindo
+    usuariosSeguindo: data.usuariosSeguindo,
+    coverImageURL: data.coverImageURL
   });
   
   await newUni.save();

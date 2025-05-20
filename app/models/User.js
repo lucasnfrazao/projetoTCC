@@ -29,7 +29,6 @@ const createUser = async (data) => {
         role: data.role,
         universidadesSeguidas: data.universidadesSeguidas
     });
-    console.log(newUser);
     await newUser.save();
     return newUser;
 }
