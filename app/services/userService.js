@@ -27,6 +27,8 @@ const alterarStatusSeguindoUniversidade = async (userId, uniId, isFollowing) => 
   const User = userModel.User;
   const Universidade = universidadeModel.Universidade;
 
+  console.log("UPDATING MODEL")
+
   const newUni = await Universidade.updateOne(
     { _id: uniId },
     { [operator]: { usuariosSeguindo: userId } },

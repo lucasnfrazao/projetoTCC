@@ -5,11 +5,13 @@ export default function VestibularModal({vestibular, universidadeNome}) {
     const datas = vestibular.datas;
     return(
         <div className={styles.modalWrapper}>
-            <div className={styles.modalHeader}>
+            <div className={vestibular.status === 'aberto' ? styles.modalHeaderAberto : styles.modalHeaderEncerrado}>
                 <div className={styles.modalHeaderContent}>
-                    <h2>{vestibular.titulo}</h2>
+                    <h2>{vestibular.nome}</h2>
                     <h3>{universidadeNome}</h3>
-                    <span>Inscrições Abertas</span>
+                    <span>
+                        {vestibular.status === 'aberto' ? 'Inscrições Abertas' : 'Vestibular Encerrado'}
+                    </span>
                 </div>
             </div>
             <div className={styles.modalContentArea}>

@@ -9,6 +9,10 @@ export function AuthProvider({ children }) {
     const [token, setToken] = useState(() => localStorage.getItem('authToken'));
 
     useEffect(() => {
+        if (user !== null) {
+            return
+        }
+
         if (token) {
             fetch(`${API_BASE}/auth/me`, {
                 headers: { Authorization: `Bearer ${token}`}
@@ -19,7 +23,7 @@ export function AuthProvider({ children }) {
         } else {
             console.log("No login token")
         }
-    }, [token]);
+    }, [user, token]);
 
     const login = (userData, token) => {
         setUser(userData);

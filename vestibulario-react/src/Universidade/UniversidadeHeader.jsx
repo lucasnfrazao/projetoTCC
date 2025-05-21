@@ -1,7 +1,9 @@
-import React from 'react'
 import styles from './UniversidadePage.module.css'
+import { useAuth } from '../hooks/useAuth.js';
+import api from '../services/api.js';
 
 export default function UniversityHeader({ university }) {
+  const { user } = useAuth();
 
   function getFollowerCountString() {
     const usuariosSeguindo = university.university.usuariosSeguindo;
@@ -19,8 +21,21 @@ export default function UniversityHeader({ university }) {
     }
   }
 
-  function handleSeguirUniversidadeOnClick() {
-    console.log("Clicou para seguir universidade!")
+  async function handleSeguirUniversidadeOnClick() {
+    if (user === null) {
+      return
+    }
+    try {
+      const bodyData = {
+        id: university.university._id,
+        isFollowing: true
+      };
+      const response = await api.patch(`user/${user._id}`, bodyData)
+      console.log(response);
+    } catch(error) {
+      console.log(error);
+    }
+    
   }
 
   return (
@@ -36,13 +51,13 @@ export default function UniversityHeader({ university }) {
         </div>
         <div className={styles.headerInfo}>
           <h1 className={styles.name}>{university.university.nome}</h1>
-          <p className={styles.location}>{university.university.cidade}</p>
+          <p className={styles.location}>{university.university.cidade}, {university.university.estado}</p>
           <p className={styles.followers}>
             {getFollowerCountString()}
           </p>
           <button 
           className={styles.followBtn}
-          onClick={handleSeguirUniversidadeOnClick()}
+          onClick={handleSeguirUniversidadeOnClick}
           >
             Seguir Universidade
           </button>

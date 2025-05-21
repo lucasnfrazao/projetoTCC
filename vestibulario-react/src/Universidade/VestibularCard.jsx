@@ -15,15 +15,16 @@ export default function VestibularCard({ vestibular, onClick }) {
                     className={styles.statusBadge}
                     //style={{ backgroundColor: statusColor }}
                 >
-                    {/* {data.status} */}
+                    {/* {vestibular.status} */}
                 </span>
             </div>
-            <ul className={styles.detailsList}>
+            {/* <ul className={styles.detailsList}>
                 <li>
                     <p> Próximo Evento: {proximoEvento.titulo} </p>
                     <p> Data: {proximoEvento.data} </p>
                 </li>
-            </ul>
+            </ul> */}
+            {/* {vestibular.status} */}
             <button className={styles.infoBtn}>Mais Informações</button>
         </div>
     )

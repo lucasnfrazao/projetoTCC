@@ -2,10 +2,7 @@ import styles from './UniversidadePage.module.css'
 
 export default function VestibularDataCard({ data }) {
     function getDataString() {
-        const startDateString = getStringForDate(data.startDate)
-        const endDataString = getStringForDate(data.endDate)
-
-        return `${startDateString} a ${endDataString}`
+        return `${data.startDate} a ${data.endDate}`
     }
 
     function getStringForDate(data) {

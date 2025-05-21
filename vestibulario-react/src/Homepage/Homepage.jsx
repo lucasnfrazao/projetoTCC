@@ -47,7 +47,7 @@ function HomePage() {
   }
   else {
     universidadeSection = Object.values(universities).map( uni =>
-      <Card id={uni._id} title={uni.nome} img={uni.coverImageURL}/>
+      <Card id={uni._id} title={uni.nome} cidade={uni.cidade} estado={uni.estado} img={uni.coverImageURL}/>
     )
   }
 

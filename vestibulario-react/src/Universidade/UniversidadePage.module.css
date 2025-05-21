@@ -36,8 +36,11 @@
 
 .coverContent {
     display: flex;
+    justify-content: flex-start;
     gap: 20px;
     max-width: 1200px;
+    margin: 0 auto;  
+    width: 100%; 
 }
 
 .coverWrapper {
@@ -241,9 +244,14 @@
     background-color: #F4F4F4;
 }
 
-.modalHeader {
+.modalHeaderAberto {
     overflow: hidden;
     background-color: #00AFC2;
+}
+
+.modalHeaderEncerrado {
+    overflow: hidden;
+    background-color: #6c757d;
 }
 
 .modalHeaderContent {
