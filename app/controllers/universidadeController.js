@@ -1,3 +1,6 @@
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+
 import universidadeService from '../services/universidadeService.js';
 
 const getListaDeUniversidades = async (req, res) => {

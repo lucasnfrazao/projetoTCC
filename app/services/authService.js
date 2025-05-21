@@ -14,7 +14,7 @@ const registerStudentUser = async (req, res) => {
     }
 
     const existingUser = await userService.getUserUsingEmail(email);
-    
+
     if (existingUser !== null) {
         return res.status(401).json({msg: 'Existing user...'});
     }
@@ -44,8 +44,12 @@ const registerStudentUser = async (req, res) => {
 
     const user = await userService.createUser(userObject);
   
+    const JWT_SECRET = process.env.SECRET;
+
     try {
-      res.status(201).json({ msg: 'Usuario criado com sucesso' })
+        // TODO: Add expiration date back.
+        const token = jwt.sign({ id: user._id }, JWT_SECRET)
+        res.status(200).json({ token: token });
     } catch(error) {
       res.status(500).json({msg: error})
     }
@@ -106,6 +110,29 @@ export function authenticate(req, res, next) {
     }
 }
 
+export async function authenticateAdmin(req, res, next)  {
+    const JWT_SECRET = process.env.SECRET
+
+    const auth = req.headers.authorization
+    if (!auth?.startsWith('Bearer ')) {
+        return res.status(401).json({ message: 'Missing token' })
+    }
+
+    const token = auth.split(' ')[1]
+    try {
+        const payload = jwt.verify(token, JWT_SECRET)
+        const userModel = await userService.getUserById(payload.id);
+        if (userModel.role == "admin") {
+            req.user = payload
+            next()
+        } else {
+            return res.status(401).json({ message: 'Usuário não autorizado' })
+        }
+    } catch (err) {
+        return res.status(401).json({ message: 'Usuário não autorizado' })
+    }
+}
+
 const getCurrentUserUsingToken = async (req, res) => {
     const userId = req.user.id
     const user = await userService.getUserById(userId)
@@ -117,5 +144,6 @@ export default {
     registerStudentUser,
     getCurrentUserUsingToken,
     authenticate,
+    authenticateAdmin,
     loginUser
 }

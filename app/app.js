@@ -3,7 +3,6 @@ import express from 'express';
 import jwt from 'jsonwebtoken';
 import cors from 'cors';
 
-import userService from './services/userService.js';
 import userRoutes from './routes/userRoutes.js';
 import authRoutes from './routes/authRoutes.js';
 import universidadeRoutes from './routes/universidadeRoutes.js';
@@ -20,7 +19,6 @@ async function main() {
 
   const mongoURI = process.env.MONGO_URI;
   console.log(mongoURI);
-  //const mongoURI = `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@mongo:27017/vestibulario?authSource=admin`
   //const mongoURI = `mongodb+srv://lucasnfrazao:AxW7Ykyued8OL8On@vestibulariocluster.obehw4b.mongodb.net/vestibularioDB?retryWrites=true&w=majority&appName=VestibularioCluster`
   
   await mongoose.connect(mongoURI)

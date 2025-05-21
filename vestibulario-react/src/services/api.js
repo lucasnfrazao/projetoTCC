@@ -1,8 +1,10 @@
 import axios from 'axios';
 import { getToken } from './authService';
 
+import { API_BASE } from '../config.js';
+
 const api = axios.create({
-  baseURL: 'https://api.vestibulario.com',
+  baseURL: API_BASE,
 });
 
 api.interceptors.request.use((config) => {

@@ -4,9 +4,15 @@ import LogoComponent from '../LogoComponent/LogoComponent.jsx';
 import './cadastro.css';
 
 import api from '../services/api.js';
+import { useAuth } from '../hooks/useAuth.js';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Cadastro() {
+    const { login } = useAuth();
+    
+    let navigate = useNavigate();
+
     const [formData, setFormData] = useState({
         name: '',
         lastName: '',
@@ -17,7 +23,6 @@ function Cadastro() {
 
     function handleChange(e) {
         const { name, value } = e.target;
-        // console.log('↪️ Campo alterado:', name, value);
         setFormData((prev) => ({
           ...prev,
           [name]: value
@@ -26,11 +31,19 @@ function Cadastro() {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        //console.log(JSON.stringify(formData, null, 2));
         try {
-            const response = await api.post('auth/register', formData)         
-            console.log(response);
-            // TODO: Fazer login automaticamente e navegar para rota /perfil.
+            const response = await api.post('auth/register', formData)   
+            
+            if (response.status === 200) {
+                const loginData = {
+                    email: formData.email,
+                    password: formData.password
+                }
+                console.log(loginData);
+                const loginResponse = await api.post('auth/login', loginData);
+                login(loginResponse.data, loginResponse.data.token);
+                navigate(`/`);
+            }
         } catch (err) {
             alert(err);
         }
