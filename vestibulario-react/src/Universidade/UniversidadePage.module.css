@@ -332,3 +332,25 @@
     font-size: 20px;
     color: #00AFC2;
 }
+
+@media (max-width: 768px) {
+    .main {
+        width: 80%;
+    }
+
+    .mainContent {
+        flex-direction: column;
+    }
+
+    .coverContent {
+        flex-direction: column;
+    }
+
+    .coverWrapper {
+        width: 100%;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+}

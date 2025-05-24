@@ -1,6 +1,4 @@
 .profileHeader {
-    /* display: flex; */
-    /* justify-content: center; */
     background-color: #00818F;
 }
 
@@ -52,4 +50,31 @@
 .logoutButton {
     background-color: #EB8135;
     color: #fff;
+}
+
+.profileUniversidadeSection {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 90px;
+    padding: 20px 0px;
+}
+
+.cardHeader {
+    font-size: 25px;
+    font-weight: 500;
+    font-family: 'Outfit';
+    color: #6B6B6B;
+}
+
+@media (max-width: 768px) {
+
+    .profileHeaderContent {
+        flex-direction: column;
+    }
+
+    .profileInformationSection {
+        align-items: center;
+    }
 }

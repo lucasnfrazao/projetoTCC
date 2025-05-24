@@ -24,6 +24,7 @@ function Perfil() {
             </div>
 
             <div className={styles.profileUniversidadeSection}>
+                <h2 className={styles.cardHeader}>Universidades Seguidas</h2>
                 <UniversidadeCard id={"id"} title={"PUC"} cidade={"Rio de Janeiro"} estado={"RJ"} img={""}/>
             </div>
         </div>

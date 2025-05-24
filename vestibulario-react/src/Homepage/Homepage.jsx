@@ -56,7 +56,7 @@ function HomePage() {
     <div className={styles.homepage}>
       <section className={styles.hero}>
         <div className={styles.heroText}>
-          <h1 className={styles.heroTitle}>O Futuro é seu.<br />A gente te mostra o caminho.</h1>
+          <h1 className={styles.heroTitle}>O futuro é seu.<br />A gente te mostra o caminho.</h1>
           <button className={styles.ctaButton} onClick={handlePress}>Encontrar Universidades</button>
         </div>
         <img src={homeIcon} alt="graphic" className={styles.heroImage} />
