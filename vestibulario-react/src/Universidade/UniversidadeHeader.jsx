@@ -1,41 +1,33 @@
 import styles from './UniversidadePage.module.css'
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useAuth } from '../hooks/useAuth.js';
 import api from '../services/api.js';
 
 export default function UniversityHeader({ university }) {
   const { user, setUser } = useAuth();
   const [ isFollowing, setIsFollowing ] = useState(false);
+  const [ followingCount, setFollowingCount] = useState(0);
 
   useEffect(() => {
     if (user === null) {
-      return
+      return 
     }
 
     if (!Array.isArray(user.universidadesSeguidas)) {
-      return;
+      return
     }
 
     const uniId = university.university._id;
     const isFollowing = user.universidadesSeguidas.includes(uniId);
     setIsFollowing(isFollowing);
-  }, [user, university, setIsFollowing])
 
-  function getFollowerCountString() {
-    const usuariosSeguindo = university.university.usuariosSeguindo;
-
-    if (!usuariosSeguindo) {
-      return 0
+    async function getUsuariosSeguindo() {
+      const usuariosSeguindo = await api.get(`universidades/${uniId}/seguidores`)
+      setFollowingCount(usuariosSeguindo.data.seguidores);
     }
     
-    const numUsuarios = usuariosSeguindo.length;
-
-    if (numUsuarios === 1) {
-      return `${numUsuarios} seguidor`
-    } else {
-      return `${numUsuarios} seguidores`
-    }
-  }
+    getUsuariosSeguindo();
+  }, [user, university, setIsFollowing, setFollowingCount])
 
   async function handleSeguirUniversidadeOnClick() {
     if (user === null) {
@@ -55,8 +47,10 @@ export default function UniversityHeader({ university }) {
       setUser(updatedUser);
       
       const isNowFollowing = user.universidadesSeguidas.includes(uniId);
-      console.log(isNowFollowing);
       setIsFollowing(isNowFollowing);
+
+      const usuariosSeguindo = await api.get(`universidades/${uniId}/seguidores`)
+      setFollowingCount(usuariosSeguindo.data.seguidores);
     } catch(error) {
       console.log(error);
     }
@@ -78,7 +72,7 @@ export default function UniversityHeader({ university }) {
           <h1 className={styles.name}>{university.university.nome}</h1>
           <p className={styles.location}>{university.university.cidade}, {university.university.estado}</p>
           <p className={styles.followers}>
-            {getFollowerCountString()}
+            {`Seguidores: ${followingCount}` }
           </p>
           <button 
           className={styles.followBtn}

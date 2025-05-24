@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
-import styles from './Homepage.module.css';
+import styles from '../Homepage/Homepage.module.css';
 
-function Card({ id, title, cidade, estado, img }) {
+function UniversidadeCard({ id, title, cidade, estado, img }) {
 
     let navigate = useNavigate();
 
@@ -19,4 +19,4 @@ function Card({ id, title, cidade, estado, img }) {
     );
 }
 
-export default Card;
+export default UniversidadeCard;

@@ -54,7 +54,7 @@ const getUniversidadeWithId = async (req, res) => {
         return
     }
 
-    console.log(universidadeModel);
+    //console.log(universidadeModel);
     res.status(200).json(universidadeModel);
 };
 
@@ -105,11 +105,25 @@ const updateDataUniversidade = async (req, res) => {
     res.status(200).json(newUni);
 };
 
+const getNumeroDeSeguidores = async (req, res) => {
+    const id = req.params.id;
+    
+    const universidadeModel = await universidadeService.getUniversidadeWithId(id);
+
+    if (!universidadeModel) {
+        res.status(404);
+        return
+    }
+
+    res.status(200).json({ "seguidores": universidadeModel.usuariosSeguindo.length });
+};
+
 export default {
     getListaDeUniversidades,
     getListaDeCursos,
     getListaDeVestibulares,
     getUniversidadeWithId,
     createUniversidade,
-    updateDataUniversidade
+    updateDataUniversidade,
+    getNumeroDeSeguidores
 }

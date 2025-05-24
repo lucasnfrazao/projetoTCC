@@ -31,10 +31,16 @@ services:
   frontend:
     build: ./vestibulario-react
     container_name: vestibulario_react
+    volumes:
+       - ./:/vestibulario-react:delegated
+       - /node_modules
     ports:
       - "3000:3000"
     depends_on:
       - app
+    command: npm start
+    environment:
+      - CHOKIDAR_USEPOLLING=true
 
 
 volumes:

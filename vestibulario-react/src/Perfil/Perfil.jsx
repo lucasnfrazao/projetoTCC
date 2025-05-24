@@ -1,3 +1,4 @@
+import UniversidadeCard from '../UniversidadeCard/UniversidadeCard.jsx';
 import styles from './Perfil.module.css';
 import { useAuth } from '../hooks/useAuth';
 import profileImage from '../assets/user-profile.png';
@@ -22,8 +23,8 @@ function Perfil() {
                 </div>
             </div>
 
-            <div className>
-
+            <div className={styles.profileUniversidadeSection}>
+                <UniversidadeCard id={"id"} title={"PUC"} cidade={"Rio de Janeiro"} estado={"RJ"} img={""}/>
             </div>
         </div>
     )

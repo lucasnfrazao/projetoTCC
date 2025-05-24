@@ -1,4 +1,4 @@
-import Card from './Card.jsx';
+import UniversidadeCard from '../UniversidadeCard/UniversidadeCard.jsx';
 import homeIcon from '../assets/svg-home.svg';
 import { useNavigate } from 'react-router-dom';
 import { API_BASE } from '../config.js';
@@ -42,12 +42,13 @@ function HomePage() {
     <div>Loading...</div>
 
   let universidadeSection
+
   if (loading) {
     universidadeSection = renderLoading()
   }
   else {
     universidadeSection = Object.values(universities).map( uni =>
-      <Card id={uni._id} title={uni.nome} cidade={uni.cidade} estado={uni.estado} img={uni.coverImageURL}/>
+      <UniversidadeCard id={uni._id} title={uni.nome} cidade={uni.cidade} estado={uni.estado} img={uni.coverImageURL}/>
     )
   }
 

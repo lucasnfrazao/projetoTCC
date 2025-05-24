@@ -7,4 +7,5 @@ RUN npm install
 
 COPY . .
 
-CMD ["npm", "start"]
+# Deploy app for local development
+CMD npm start --host 0.0.0.0 --port 3000 --disableHostCheck true
