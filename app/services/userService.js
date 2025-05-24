@@ -27,7 +27,7 @@ const alterarStatusSeguindoUniversidade = async (userId, uniId, isFollowing) => 
   const User = userModel.User;
   const Universidade = universidadeModel.Universidade;
 
-  console.log("UPDATING MODEL")
+  //console.log("UPDATING MODEL")
 
   const newUni = await Universidade.updateOne(
     { _id: uniId },
@@ -35,13 +35,13 @@ const alterarStatusSeguindoUniversidade = async (userId, uniId, isFollowing) => 
     { new: true }
   )
 
-  const newUser = await User.updateOne(
+  const newUser = await User.findOneAndUpdate(
     { _id: userId },
     { [operator]: { universidadesSeguidas: uniId } },
     { new: true }
-  )
+  ).select('-password');
 
-  return (newUser + newUni)
+  return newUser
 }
  
 export default {

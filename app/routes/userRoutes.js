@@ -7,6 +7,7 @@ const router = express.Router();
 router.get('/', authenticateAdmin, userController.getAllUsers);
 router.post('/', userController.createUser);
 router.get('/:id', userController.getUserById);
+router.get('/:id/universidadesSeguidas', userController.getUserById);
 router.patch('/:id', userController.alterarStatusSeguindoUniversidade);
 
 export default router;

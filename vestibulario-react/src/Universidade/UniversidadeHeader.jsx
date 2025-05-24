@@ -1,9 +1,25 @@
 import styles from './UniversidadePage.module.css'
+import { useEffect, useState } from 'react';
 import { useAuth } from '../hooks/useAuth.js';
 import api from '../services/api.js';
 
 export default function UniversityHeader({ university }) {
-  const { user } = useAuth();
+  const { user, setUser } = useAuth();
+  const [ isFollowing, setIsFollowing ] = useState(false);
+
+  useEffect(() => {
+    if (user === null) {
+      return
+    }
+
+    if (!Array.isArray(user.universidadesSeguidas)) {
+      return;
+    }
+
+    const uniId = university.university._id;
+    const isFollowing = user.universidadesSeguidas.includes(uniId);
+    setIsFollowing(isFollowing);
+  }, [user, university, setIsFollowing])
 
   function getFollowerCountString() {
     const usuariosSeguindo = university.university.usuariosSeguindo;
@@ -26,12 +42,21 @@ export default function UniversityHeader({ university }) {
       return
     }
     try {
+      const uniId = university.university._id;
+      const isFollowing = user.universidadesSeguidas.includes(uniId)
+
       const bodyData = {
-        id: university.university._id,
-        isFollowing: true
+        id: uniId,
+        isFollowing: !isFollowing
       };
+
       const response = await api.patch(`user/${user._id}`, bodyData)
-      console.log(response);
+      const updatedUser = response.data
+      setUser(updatedUser);
+      
+      const isNowFollowing = user.universidadesSeguidas.includes(uniId);
+      console.log(isNowFollowing);
+      setIsFollowing(isNowFollowing);
     } catch(error) {
       console.log(error);
     }
@@ -59,7 +84,7 @@ export default function UniversityHeader({ university }) {
           className={styles.followBtn}
           onClick={handleSeguirUniversidadeOnClick}
           >
-            Seguir Universidade
+            { isFollowing ? "Seguindo" : "Seguir Universidade" }
           </button>
         </div>
       </div>

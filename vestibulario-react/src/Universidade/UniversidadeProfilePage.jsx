@@ -9,9 +9,9 @@ import VestibularModal from "./VestibularModal.jsx";
 import styles from './UniversidadePage.module.css'
 
 export default function UniversidadeProfilePage(university) {
-  const [activeTab, setActiveTab] = useState('Vestibulares')
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedVestibular, setSelectedVestibular] = useState(null);
+    const [activeTab, setActiveTab] = useState('Vestibulares')
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedVestibular, setSelectedVestibular] = useState(null);
 
     function onVestibularClick(vestibular) {
         setIsModalOpen(true);

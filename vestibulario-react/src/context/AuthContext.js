@@ -40,9 +40,9 @@ export function AuthProvider({ children }) {
     const isAuthenticated = !!user;
 
     return (
-        <AuthContext.Provider value={{ user, isAuthenticated, token, login, logout }}>
+        <AuthContext.Provider value={{ user, setUser, isAuthenticated, token, login, logout }}>
             {children}
-            {console.log("AuthProvider state:", { user, isAuthenticated })}
+            {/* {console.log("AuthProvider state:", { user, isAuthenticated })} */}
         </AuthContext.Provider>
     );
 }
