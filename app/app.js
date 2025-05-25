@@ -18,7 +18,7 @@ const PORT = 4000;
 async function main() {
 
   const mongoURI = process.env.MONGO_URI;
-  console.log(mongoURI);
+  //console.log(mongoURI);
   //const mongoURI = `mongodb+srv://lucasnfrazao:AxW7Ykyued8OL8On@vestibulariocluster.obehw4b.mongodb.net/vestibularioDB?retryWrites=true&w=majority&appName=VestibularioCluster`
   
   await mongoose.connect(mongoURI)

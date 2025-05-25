@@ -22,11 +22,16 @@ services:
       - mongo
     ports:
       - 4000:4000
+    volumes:
+      - ./app:/app
+      - /app/node_modules
+    command: npm run dev
     environment:
       APP_NAME: DockerApp
       PORT: 4000
       MONGO_URI: mongodb://root:example@mongo:27017/vestibulario?authSource=admin
       SECRET: c388f7fc6034d79f59228e703230180128262defe52a8f7971dbddec1d2f96b8
+        - CHOKIDAR_USEPOLLING=true
 
   frontend:
     build: ./vestibulario-react

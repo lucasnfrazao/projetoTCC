@@ -23,6 +23,12 @@ const getUserById = async (req, res) => {
   }
 };
 
+const getUniversidadesSeguidas = async (req, res) => {
+  const userId = req.params.id;
+  const universidadesSeguidas = await userService.getFollowedUniversities(userId);
+  res.status(200).json({universidades: universidadesSeguidas});
+};
+
 const alterarStatusSeguindoUniversidade = async (req, res) => {
   const userId = req.params.id;
   const dict = req.body;
@@ -38,5 +44,6 @@ export default {
     getAllUsers,
     createUser,
     getUserById,
+    getUniversidadesSeguidas,
     alterarStatusSeguindoUniversidade
 };

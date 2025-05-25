@@ -36,7 +36,7 @@ function Header() {
       <span>
         <ul className={isMenuOpen ? styles.navListMobileOpen : styles.navListMobile}>
           <li><a href="/" className={styles.link}>Início</a></li>
-          <li><a href="/universidades" className={styles.link}>Universidades</a></li>
+          <li><a href="/vestibulares" className={styles.link}>Vestibulares</a></li>
           {isAuthenticated ? renderAutenticado(true) : renderSemLogin(true)}
         </ul>
        
@@ -51,7 +51,7 @@ function Header() {
         <nav className={`nav ${isMenuOpen ? "open" : ""}`}>
           <ul className={styles.navList}>
             <li><a href="/" className={styles.link}>Início</a></li>
-            <li><a href="/universidades" className={styles.link}>Universidades</a></li>
+            <li><a href="/vestibulares" className={styles.link}>Vestibulares</a></li>
           </ul>
         </nav>
         {isAuthenticated ? renderAutenticado(false) : renderSemLogin(false) }

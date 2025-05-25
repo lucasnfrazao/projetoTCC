@@ -43,7 +43,7 @@
     padding: 15px 60px;
     border-radius: 6px;
     color: white;
-    font-weight: bold;
+    font-weight: medium;
     cursor: pointer;
     margin-top: 20px;
 }
@@ -59,7 +59,7 @@
 .heroImage {
     display: flex;
     flex-grow: 1;
-    height: 352px;
+    height: 200px;
 }
 
 .search {

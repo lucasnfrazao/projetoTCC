@@ -18,6 +18,27 @@ const getUserUsingEmail = async (email) => {
   return await userModel.findUserWithEmail(email);
 }
 
+const getFollowedUniversities = async (userId) => {
+  const user = await userModel.findUserById(userId);
+  const followedUniIds = user.universidadesSeguidas;
+
+  if (followedUniIds === null) {
+    return [];
+  }
+
+  if (!Array.isArray(followedUniIds)) {
+    return [];
+  } 
+
+  const Universidade = universidadeModel.Universidade;
+
+  const universidades = (
+    await Promise.all(followedUniIds.map(id => Universidade.findById(id)))
+  ).filter(Boolean);
+
+  return universidades
+}
+
 const alterarStatusSeguindoUniversidade = async (userId, uniId, isFollowing) => {
   const operator = isFollowing ? "$push" : "$pull"
 
@@ -47,5 +68,6 @@ export default {
     createUser,
     getUserById,
     getUserUsingEmail,
+    getFollowedUniversities,
     alterarStatusSeguindoUniversidade
 };

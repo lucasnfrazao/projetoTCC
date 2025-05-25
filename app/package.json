@@ -24,7 +24,7 @@
   },
   "contributors": [],
   "scripts": {
-    "dev": "",
+    "dev": "nodemon app.js",
     "test": "",
     "start": "set NODE_ENV=dev && nodemon node app.js"
   },

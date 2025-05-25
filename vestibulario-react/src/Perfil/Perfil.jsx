@@ -11,7 +11,7 @@ function Perfil() {
     }
 
     return(
-        <div>
+        <div className={styles.page}>
             <div className={styles.profileHeader}>
                 <div className={styles.profileHeaderContent}>
                     <img src={profileImage} alt="profile" className={styles.profileImage}></img>
