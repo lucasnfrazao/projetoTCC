@@ -34,8 +34,7 @@ function HomePage() {
   }, [])
 
   function handlePress() {
-    console.log(universities)
-    //navigate(`/universidades`)
+    navigate(`/vestibulares`)
   }
 
   const renderLoading = () => 

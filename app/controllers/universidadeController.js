@@ -44,6 +44,10 @@ const getListaDeVestibulares = async (req, res) => {
     res.status(200).json(vestibulares);
 };
 
+const getListaDeVestibularPorUniversidade = async (req, res) => {
+
+};
+
 const getUniversidadeWithId = async (req, res) => {
     const id = req.params.id;
     
@@ -54,7 +58,6 @@ const getUniversidadeWithId = async (req, res) => {
         return
     }
 
-    //console.log(universidadeModel);
     res.status(200).json(universidadeModel);
 };
 
@@ -120,6 +123,7 @@ const getNumeroDeSeguidores = async (req, res) => {
 
 export default {
     getListaDeUniversidades,
+    getListaDeVestibularPorUniversidade,
     getListaDeCursos,
     getListaDeVestibulares,
     getUniversidadeWithId,

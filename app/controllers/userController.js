@@ -6,7 +6,7 @@ const getAllUsers = async(req, res) => {
     res.status(404).json({ message: 'Users not found' });
   } else {
     res.status(200).json(allUsers);
-  }
+  } 
 };
 
 const createUser = (req, res) => {

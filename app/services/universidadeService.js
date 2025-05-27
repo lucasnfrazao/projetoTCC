@@ -12,6 +12,10 @@ const getListaDeVestibulares = async (id) => {
     return await universidade.getAllVestibulares(id);
 }
 
+const getListaDeVestibularPorUniversidade = async (id) => {
+    return await universidade.getAllVestibulares(id);
+}
+
 const getUniversidadeWithId = async (id) => {
     return await universidade.findById(id);
 }

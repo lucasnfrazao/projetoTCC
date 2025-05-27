@@ -1,0 +1,22 @@
+.headerContent {
+    display: flex;
+    flex-direction: column;
+    background-color: #00818F;
+    border-radius: 12px;
+    width: 100%;
+
+}
+
+.headerTitle {
+    margin-left: 20px;
+    margin-bottom: 0px;
+    font-size: 25px;
+    font-weight: 500;
+    color: white;
+}
+
+.headerSubtitle {
+    margin-left: 20px;
+    font-size: 20px;
+    color: white;
+}

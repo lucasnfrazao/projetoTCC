@@ -144,7 +144,7 @@
 
 /* Vestibular Card */
 .card {
-    background: #00AFC2;
+    /* background: #00AFC2; */
     border-radius: 12px;
     padding: 20px;
     color: #fff;
@@ -153,8 +153,9 @@
 
 .cardHeader {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .cardHeader h3 {
@@ -163,7 +164,7 @@
 }
 
 .statusBadge {
-    padding: 4px 12px;
+    padding: 4px 0px;
     border-radius: 12px;
     font-size: 0.9rem;
     color: #fff;

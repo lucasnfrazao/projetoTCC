@@ -14,6 +14,9 @@ router.get('/:id/cursos', universidadeController.getListaDeCursos);
 router.get('/:id/vestibulares', universidadeController.getListaDeVestibulares);
 router.get('/:id/seguidores', universidadeController.getNumeroDeSeguidores);
 
+// Vestibulares
+// router.get('/vestibulares', universidadeController.getListaDeUniversidades);
+
 /// Put
 router.put('/:id', universidadeController.updateDataUniversidade);
 

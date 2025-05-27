@@ -5,6 +5,7 @@ import Login from '../Login/Login.jsx';
 import Perfil from '../Perfil/Perfil.jsx';
 import UniversidadePage from '../Universidade/UniversidadePage.jsx';
 import PrivateRoute from './PrivateRoute.jsx';
+import VestibularesPage from '../VestibularesPage/VestibularesPage.jsx'
 import styles from './Routes.module.css'
 
 function AppRoutes() {
@@ -15,6 +16,7 @@ function AppRoutes() {
         <Route path="/registro" element={<Cadastro />} />
         <Route path="/login" element={<Login />} />
         <Route path="/universidade/:id" element={<UniversidadePage />} />
+        <Route path="/vestibulares" element={<VestibularesPage />} />
 
         {/* Protected route */}
         <Route

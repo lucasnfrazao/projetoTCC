@@ -31,7 +31,7 @@ export default function UniversidadePage() {
       .finally(() => setLoading(false))
   }, [id])
 
-  // TODO: Handle loading + error -> caso universidade doesn't exist.
+  // TODO: Handle loading + error -> case universidade doesn't exist.
 
   if (loading) return <p>Carregando…</p>
   if (error)   return <p>Erro: {error.message}</p>
