@@ -74,12 +74,9 @@ const loginUser = async (req, res) => {
         return res.status(404).json({msg: 'E-mail não encontrado...'});
     }
   
-    console.log(password, user.password)
-    
     // Checando a senha...
     const checkPassword = await bcrypt.compare(password, user.password);
   
-    console.log(checkPassword)
     if (checkPassword === false) {
         return res.status(404).json({msg: 'Senha inválida'});
     }
