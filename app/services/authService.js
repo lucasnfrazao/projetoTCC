@@ -67,25 +67,28 @@ const loginUser = async (req, res) => {
     }
   
     const user = await userService.getUserUsingEmail(email);
+    delete user.password;
   
     // Checando se usuário existe...
     if (!user) {
         return res.status(404).json({msg: 'E-mail não encontrado...'});
     }
   
+    console.log(password, user.password)
+    
     // Checando a senha...
-    const checkPassword = bcrypt.compare(password, user.password);
+    const checkPassword = await bcrypt.compare(password, user.password);
   
-    if (!checkPassword) {
+    console.log(checkPassword)
+    if (checkPassword === false) {
         return res.status(404).json({msg: 'Senha inválida'});
     }
   
     const JWT_SECRET = process.env.SECRET;
 
     try {
-        // TODO: Add expiration date back.
         const token = jwt.sign({ id: user._id }, JWT_SECRET)
-        res.status(200).json({ token: token });
+        res.status(200).json({ user: user, token: token });
     } catch(error){
       console.log(error);
       res.status(500).json({msg: error});

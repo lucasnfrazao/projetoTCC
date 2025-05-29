@@ -1,6 +1,7 @@
 import UniversidadeCard from '../UniversidadeCard/UniversidadeCard.jsx';
 import styles from './Perfil.module.css';
 import { useAuth } from '../hooks/useAuth';
+import { useNavigate } from 'react-router-dom';
 import profileImage from '../assets/user-profile.png';
 import { useState, useEffect } from 'react';
 import { API_BASE } from '../config.js';
@@ -10,7 +11,10 @@ function Perfil() {
     const [loading, setLoading] = useState(true)
     const { user, logout } = useAuth();
 
+    let navigate = useNavigate();
+
     function handleLogoutClick() {
+        navigate(`/`)
         logout();
     }
 

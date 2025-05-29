@@ -28,11 +28,14 @@ function Login() {
     async function handleSubmit(e) {
         e.preventDefault();
         try {
-            const response = await api.post('auth/login', formData);        
-            login(response.data, response.data.token);
-            navigate(`/`);
+            const response = await api.post('auth/login', formData);
+            console.log(response.data);  
+            if (response.status === 200) {
+                login(response.data.user, response.data.token);
+                navigate(`/`);
+            }
         } catch (err) {
-            alert(err);
+            alert(err.response.data.msg);
         }
     }
 
