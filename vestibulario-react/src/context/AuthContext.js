@@ -21,7 +21,7 @@ export function AuthProvider({ children }) {
             .then(data => setUser(data))
             .catch(() => logout())
         } else {
-            console.log("No login token")
+            // console.log("No login token")
         }
     }, [user, token]);
 
