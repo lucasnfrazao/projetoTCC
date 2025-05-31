@@ -4,7 +4,10 @@
     background-color: #00818F;
     border-radius: 12px;
     width: 100%;
+}
 
+.sectionItem {
+    margin-bottom: 40px;
 }
 
 .headerTitle {
@@ -23,9 +26,17 @@
 
 .vestibularGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    justify-items: center;
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    justify-items: flex-start;
+    padding-inline-end: 20px;
     width: 100%;
     margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .vestibularGrid {
+        justify-items: center;
+        gap: 20px;
+    }
+    
 }

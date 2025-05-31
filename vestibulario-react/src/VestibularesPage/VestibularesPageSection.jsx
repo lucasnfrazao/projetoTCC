@@ -2,32 +2,38 @@ import styles from './VestibularesPageSection.module.css'
 import { useState } from 'react';
 import Header from './VestibularesPageHeader.jsx';
 import VestibularCard from '../Universidade/VestibularCard.jsx';
-import Modal from "../Modal.jsx";
-import VestibularModal from "../Universidade/VestibularModal.jsx";
 
-export default function VestibularesPageSection(universidadeModel, selectedVestibular, onClick) {
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const vestibulares = universidadeModel.vestibulares
+export default function VestibularesPageSection({model, selectedVestibular, onClick, isModalOpen, onClose}) {
+    const vestibulares = model.vestibulares
+    const title = model.nome;
+    const subtitle = `${model.cidade}, ${model.estado}`
+
+     let vestibularesSection
+
+     if (vestibulares.length === 0) {
+        vestibularesSection = (
+            <div>Loading...</div>
+        )
+     } else {
+         vestibularesSection = (
+             vestibulares.map((vestibular, index) =>
+                 <VestibularCard
+                     key={index}
+                     vestibular={vestibular}
+                     onClick={() => onClick && onClick(vestibular, title)}
+                 />
+             )
+         )
+     }
 
     return (
         <>
-        <div> 
-             <Header/>
+        <div className={styles.sectionItem}> 
+             <Header title={title} subtitle={subtitle}/>
              <div className={styles.vestibularGrid}>
-                { 
-                vestibulares.map((vestibular, index) =>
-                    <VestibularCard
-                        key={index}
-                        vestibular={vestibular}
-                        onClick={() => onClick && onClick(vestibular)}
-                    />
-                )
-                }
+                {vestibularesSection}
              </div>
         </div>  
-            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-                <VestibularModal vestibular={selectedVestibular} />
-            </Modal>
         </> 
     )    
 }
