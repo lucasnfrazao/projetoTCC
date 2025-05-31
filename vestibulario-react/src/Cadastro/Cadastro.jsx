@@ -41,7 +41,7 @@ function Cadastro() {
                 }
                 console.log(loginData);
                 const loginResponse = await api.post('auth/login', loginData);
-                login(loginResponse.data, loginResponse.data.token);
+                login(loginResponse.data.user, loginResponse.data.token);
                 navigate(`/`);
             }
         } catch (err) {
