@@ -1,11 +1,11 @@
 FROM node:18
 
-WORKDIR /vestibulario-react
+WORKDIR /app
 
 COPY package*.json ./
 RUN npm install 
 
-COPY . .
+COPY . .  
 
 # Deploy app for local development
 CMD npm start --host 0.0.0.0 --port 3000 --disableHostCheck true

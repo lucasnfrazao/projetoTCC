@@ -1,0 +1,169 @@
+[{
+  "_id": {
+    "$oid": "67f7162bbc461032c955b9c3"
+  },
+  "name": "Lucas",
+  "lastName": "Frazão",
+  "email": "lucasnfrazao@icloud.com",
+  "password": "$2b$12$eufAft0w7LUJXSyi/G15BeeC.9jxEjPEUbEI6uv/R3fF7jkg8MWVK",
+  "role": "admin",
+  "__v": 0,
+  "universidadesSeguidas": [
+    "67fabf1c01763bd7ff4e97dd"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6817a9b7c47149077302a152"
+  },
+  "name": "Lucas",
+  "lastName": "Nunes",
+  "email": "lucasnfrazao2@icloud.com",
+  "password": "$2b$12$dhUun41c/ZwcOS3i89W4Eem0F0f4kwMXWVOjjfW3GD1DqB1x1JdFi",
+  "role": "aluno",
+  "universidadesSeguidas": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6817acbcc47149077302a155"
+  },
+  "name": "Takemi",
+  "lastName": "Issobe",
+  "email": "take.issobe@gmail.com",
+  "password": "$2b$12$x5QcveMRq8MIcN6erYohwe6iyyzqC96iTzK.UzgllwMWi2qoNjKYm",
+  "role": "aluno",
+  "universidadesSeguidas": [
+    {
+      "$oid": "67fabf1c01763bd7ff4e97dd"
+    },
+    {
+      "$oid": "6823e83a9165089d15c3607d"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681bf9f1fe8f372d839394e9"
+  },
+  "name": "Priscila",
+  "lastName": "Nascimento",
+  "email": "nascpesq@gmail.com",
+  "password": "$2b$12$TpgKlgsKUCwgNYvsEN5LDOX4AU0zmwBtxifcWkgwMSFrcxDE76nsy",
+  "role": "aluno",
+  "universidadesSeguidas": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6820feca7e957f3633e67d2a"
+  },
+  "name": "John",
+  "lastName": "Doe",
+  "email": "email@icloud.com",
+  "password": "$2b$12$BQtq5p3Ud0lpdYSDdYD.ru3wtetKVRlhHRhqWCGh8.rDMmghE/EGa",
+  "role": "aluno",
+  "universidadesSeguidas": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682d14b66fd58f320064672a"
+  },
+  "name": "John",
+  "lastName": "Doe",
+  "email": "email+1@icloud.com",
+  "password": "$2b$12$wZdn11R5oYw.6gkC8o/uNuHUSe61FUGOa89a4qzqaFCzLYOOf.yyG",
+  "role": "aluno",
+  "universidadesSeguidas": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682d159f6fd58f320064672d"
+  },
+  "name": "Takemi",
+  "lastName": "Issobe",
+  "email": "take.issobe+10@gmail.com",
+  "password": "$2b$12$g0R1GGlHMsmwZVQxXsPAT.6mr1ExIuKyqtN8947oy0aE.XHdhV3Dm",
+  "role": "aluno",
+  "universidadesSeguidas": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682d15ae6fd58f3200646730"
+  },
+  "name": "Takemi",
+  "lastName": "Issobe",
+  "email": "take.issobe+105@gmail.com",
+  "password": "$2b$12$0x1cXjV9Jm50SAGljx/p5Oev1skw/4fz8I1ruEYRbkZBLlc4GpiS.",
+  "role": "aluno",
+  "universidadesSeguidas": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682d15d06fd58f3200646733"
+  },
+  "name": "Takemi",
+  "lastName": "Issobe",
+  "email": "take.issobe+15@gmail.com",
+  "password": "$2b$12$F2eWntHsdwp.2APWwpYWZetrYbu7j7K3LtV2uXQPUUf58Sdjeb1QS",
+  "role": "aluno",
+  "universidadesSeguidas": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682d169cf37f92916941b4be"
+  },
+  "name": "L ",
+  "lastName": "N",
+  "email": "l@icloud.com",
+  "password": "$2b$12$bB7PeBfVvVHzZEduIvbfDOnGUYF6xMzV8XbYcGDC1yix5N4fuCcgK",
+  "role": "aluno",
+  "universidadesSeguidas": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682d19d85ab83a763a7db875"
+  },
+  "name": "Takemi",
+  "lastName": "Issobe",
+  "email": "take.issobe+20@gmail.com",
+  "password": "$2b$12$LM5hZExV7jMrD3D03Uviy.SsY3zydbnAub94FnMR1xfNMftovjH4u",
+  "role": "aluno",
+  "universidadesSeguidas": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682d19ef5ab83a763a7db878"
+  },
+  "name": "Takemi",
+  "lastName": "Issobe",
+  "email": "take.issobe+25@gmail.com",
+  "password": "$2b$12$fORTy9V4Q65Or5x2fyK2heyO1YjsrqIXqq5AZ4bBO7IWCwZIeUQKG",
+  "role": "aluno",
+  "universidadesSeguidas": [
+    {
+      "$oid": "6823e83a9165089d15c3607d"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6838fb81c1e4f5458cdd5a75"
+  },
+  "name": "Admin",
+  "lastName": "Admin",
+  "email": "admin@vestibulario.com",
+  "password": "$2b$12$HQRoByw8mfQhqsf1UzSLNeq/12SmRZrAIzaD.Du5zSRJC6CNllMwG",
+  "role": "aluno",
+  "universidadesSeguidas": [],
+  "__v": 0
+}]

@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import vestibular from './Vestibular.js';
+
 const { Schema } = mongoose;
 
 const universidadeSchema = new Schema({

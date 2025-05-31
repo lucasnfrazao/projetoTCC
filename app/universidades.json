@@ -1,0 +1,1030 @@
+[{
+  "_id": {
+    "$oid": "67fabf1c01763bd7ff4e97dd"
+  },
+  "nome": "Pontifícia Universidade Católica do Rio de Janeiro",
+  "descricao": "A Pontifícia Universidade Católica do Rio de Janeiro é uma instituição comunitária de Educação Superior, de acordo com Portaria 679, de 12/11/2014, da Secretaria de Regulação e Supervisão da Educação Superior, filantrópica e sem fins lucrativos, que visa produzir e propagar o saber a partir das atividades de ensino, pesquisa e extensão, tendo por base o pluralismo e debates democráticos, objetivando, sobretudo, a reflexão, o crescimento e enriquecimento da sociedade.",
+  "cidade": "Rio de Janeiro",
+  "estado": "RJ",
+  "cursos": [
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97de"
+      },
+      "nome": "Administração"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97df"
+      },
+      "nome": "Arquitetura e Urbanismo"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97e0"
+      },
+      "nome": "Artes Cênicas"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97e1"
+      },
+      "nome": "Ciências Biológicas"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97e2"
+      },
+      "nome": "Ciência da Computação"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97e3"
+      },
+      "nome": "Ciência Econômicas"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97e4"
+      },
+      "nome": "Comunicação Social - Estudos de Mídia"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97e5"
+      },
+      "nome": "Comunicação Social - Jornalismo"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97e6"
+      },
+      "nome": "Design"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97e7"
+      },
+      "nome": "Direito"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97e8"
+      },
+      "nome": "Engenharia Ambiental"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97e9"
+      },
+      "nome": "Engenharia Civil"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97ea"
+      },
+      "nome": "Engenharia de Computação"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97eb"
+      },
+      "nome": "Engenharia de Controle e Automação"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97ec"
+      },
+      "nome": "Engenharia Elétrica"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97ed"
+      },
+      "nome": "Engenharia de Matéricas e Nanotecnologia"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97ee"
+      },
+      "nome": "Engenharia Mecânica"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97ef"
+      },
+      "nome": "Engenharia de Produção"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97f0"
+      },
+      "nome": "Engenharia Química"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97f1"
+      },
+      "nome": "Filosofia"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97f2"
+      },
+      "nome": "Física"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97f3"
+      },
+      "nome": "Geografia"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97f4"
+      },
+      "nome": "História"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97f5"
+      },
+      "nome": "Letras"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97f6"
+      },
+      "nome": "Matemática"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97f7"
+      },
+      "nome": "Neurociências"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97f8"
+      },
+      "nome": "Nutrição"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97f9"
+      },
+      "nome": "Pedagogia"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97fa"
+      },
+      "nome": "Psicologia"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97fb"
+      },
+      "nome": "Química"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97fc"
+      },
+      "nome": "Relações Internacionais"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97fd"
+      },
+      "nome": "Serviço Social"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97fe"
+      },
+      "nome": "Teologia"
+    }
+  ],
+  "vestibulares": [
+    {
+      "nome": "Vestibular de Inverno 2025",
+      "datas": [
+        {
+          "titulo": "Inscrição",
+          "startDate": "01/05/2025",
+          "endDate": "03/05/2025"
+        },
+        {
+          "titulo": "Cartão de Confirmação",
+          "startDate": "06/05/2025",
+          "endDate": "08/05/2025"
+        },
+        {
+          "titulo": "Provas",
+          "startDate": "11/05/2025",
+          "endDate": "13/05/2025"
+        },
+        {
+          "titulo": "Notas das Provas",
+          "startDate": "16/05/2025",
+          "endDate": "18/05/2025"
+        },
+        {
+          "titulo": "Resultado do Vestibular",
+          "startDate": "21/05/2025",
+          "endDate": "23/05/2025"
+        },
+        {
+          "titulo": "1ª convocação da matrícula",
+          "startDate": "26/05/2025",
+          "endDate": "28/05/2025"
+        }
+      ],
+      "status": "encerrado"
+    },
+    {
+      "nome": "Vestibular de Verão 2026",
+      "datas": [
+        {
+          "titulo": "Inscrição",
+          "startDate": "01/06/2025",
+          "endDate": "03/06/2025"
+        },
+        {
+          "titulo": "Cartão de Confirmação",
+          "startDate": "06/06/2025",
+          "endDate": "08/06/2025"
+        },
+        {
+          "titulo": "Provas",
+          "startDate": "11/06/2025",
+          "endDate": "13/06/2025"
+        },
+        {
+          "titulo": "Notas das Provas",
+          "startDate": "16/06/2025",
+          "endDate": "18/06/2025"
+        },
+        {
+          "titulo": "Resultado do Vestibular",
+          "startDate": "21/06/2025",
+          "endDate": "23/06/2025"
+        },
+        {
+          "titulo": "1ª convocação da matrícula",
+          "startDate": "26/06/2025",
+          "endDate": "28/06/2025"
+        }
+      ],
+      "status": "aberto"
+    }
+  ],
+  "usuariosSeguindo": [
+    "67f7162bbc461032c955b9c3",
+    {
+      "$oid": "6817acbcc47149077302a155"
+    }
+  ],
+  "coverImageURL": "https://www.puc-rio.br/sobrepuc/campus/imagens/img_campus_banner_index.jpg"
+},
+{
+  "_id": {
+    "$oid": "6823e83a9165089d15c3607d"
+  },
+  "nome": "Pontifícia Universidade Católica do Rio Grande do Sul",
+  "descricao": "A Pontifícia Universidade Católica do Rio Grande do Sul (PUCRS) é uma instituição de ensino superior (IES) privada e católica brasileira, com campus localizado em Porto Alegre. É a maior instituição de ensino superior privada do estado do Rio Grande do Sul e a primeira universidade fundada pelo Instituto dos Irmãos Maristas no mundo. A PUCRS oferece mais de 50 opções de cursos de graduação, 24 de mestrado, 22 de doutorado e mais de 100 especializações, nas modalidades presencial ou online. Possui cerca de 35 mil alunos e já diplomou mais de 170 mil estudantes. O sistema educacional é organizado em cursos e programas, que possibilitam estudos de graduação e pós-graduação, educação continuada, além de atividades de extensão e pesquisa. Em avaliação de 2019 do MEC, a PUCRS foi considerada a melhor universidade privada do sul do país, qualificação também obtida em 2012, 2013 e 2018. A mesma classificação foi conquistada em avaliação do Times Higher Education, em 2019. No Ranking Universitário Folha de S.Paulo, a Universidade aparece como a melhor privada do Brasil em 2019, 2018, 2017 e 2014. Em relação à Pós-Graduação, em 2017 a PUCRS alcançou a melhor média nacional entre as IES públicas e privadas, com dez ou mais programas de pós-graduação, de acordo com a Avaliação Quadrienal da Coordenação de Aperfeiçoamento de Pessoal de Nível Superior (Capes). Já seu Museu de Ciência e Tecnologia foi eleito o 10.º melhor do Brasil pelo site TripAdvisor, em 2017.",
+  "cidade": "Porto Alegre",
+  "estado": "RS",
+  "cursos": [
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97de"
+      },
+      "nome": "Administração"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97df"
+      },
+      "nome": "Arquitetura e Urbanismo"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97e0"
+      },
+      "nome": "Artes Cênicas"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97e1"
+      },
+      "nome": "Ciências Biológicas"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97e2"
+      },
+      "nome": "Ciência da Computação"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97e3"
+      },
+      "nome": "Ciência Econômicas"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97e4"
+      },
+      "nome": "Comunicação Social - Estudos de Mídia"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97e5"
+      },
+      "nome": "Comunicação Social - Jornalismo"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97e6"
+      },
+      "nome": "Design"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97e7"
+      },
+      "nome": "Direito"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97e8"
+      },
+      "nome": "Engenharia Ambiental"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97e9"
+      },
+      "nome": "Engenharia Civil"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97ea"
+      },
+      "nome": "Engenharia de Computação"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97eb"
+      },
+      "nome": "Engenharia de Controle e Automação"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97ec"
+      },
+      "nome": "Engenharia Elétrica"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97ed"
+      },
+      "nome": "Engenharia de Matéricas e Nanotecnologia"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97ee"
+      },
+      "nome": "Engenharia Mecânica"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97ef"
+      },
+      "nome": "Engenharia de Produção"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97f0"
+      },
+      "nome": "Engenharia Química"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97f1"
+      },
+      "nome": "Filosofia"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97f2"
+      },
+      "nome": "Física"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97f3"
+      },
+      "nome": "Geografia"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97f4"
+      },
+      "nome": "História"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97f5"
+      },
+      "nome": "Letras"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97f6"
+      },
+      "nome": "Matemática"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97f7"
+      },
+      "nome": "Neurociências"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97f8"
+      },
+      "nome": "Nutrição"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97f9"
+      },
+      "nome": "Pedagogia"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97fa"
+      },
+      "nome": "Psicologia"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97fb"
+      },
+      "nome": "Química"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97fc"
+      },
+      "nome": "Relações Internacionais"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97fd"
+      },
+      "nome": "Serviço Social"
+    },
+    {
+      "_id": {
+        "$oid": "67fabf1c01763bd7ff4e97fe"
+      },
+      "nome": "Teologia"
+    }
+  ],
+  "vestibulares": [
+    {
+      "nome": "Vestibular de Inverno 2025",
+      "datas": [
+        {
+          "titulo": "Inscrição",
+          "startDate": "01/07/2025",
+          "endDate": "03/07/2025"
+        },
+        {
+          "titulo": "Cartão de Confirmação",
+          "startDate": "06/07/2025",
+          "endDate": "08/07/2025"
+        },
+        {
+          "titulo": "Provas",
+          "startDate": "11/07/2025",
+          "endDate": "13/07/2025"
+        },
+        {
+          "titulo": "Notas das Provas",
+          "startDate": "16/07/2025",
+          "endDate": "18/07/2025"
+        },
+        {
+          "titulo": "Resultado do Vestibular",
+          "startDate": "21/07/2025",
+          "endDate": "23/07/2025"
+        },
+        {
+          "titulo": "1ª convocação da matrícula",
+          "startDate": "26/07/2025",
+          "endDate": "28/07/2025"
+        }
+      ],
+      "status": "encerrado"
+    },
+    {
+      "nome": "Vestibular de Verão 2026",
+      "datas": [
+        {
+          "titulo": "Inscrição",
+          "startDate": "01/08/2025",
+          "endDate": "03/08/2025"
+        },
+        {
+          "titulo": "Cartão de Confirmação",
+          "startDate": "06/08/2025",
+          "endDate": "08/08/2025"
+        },
+        {
+          "titulo": "Provas",
+          "startDate": "11/08/2025",
+          "endDate": "13/08/2025"
+        },
+        {
+          "titulo": "Notas das Provas",
+          "startDate": "16/08/2025",
+          "endDate": "18/08/2025"
+        },
+        {
+          "titulo": "Resultado do Vestibular",
+          "startDate": "21/08/2025",
+          "endDate": "23/08/2025"
+        },
+        {
+          "titulo": "1ª convocação da matrícula",
+          "startDate": "26/08/2025",
+          "endDate": "28/08/2025"
+        }
+      ],
+      "status": "aberto"
+    }
+  ],
+  "usuariosSeguindo": [
+    {
+      "$oid": "682d19ef5ab83a763a7db878"
+    },
+    {
+      "$oid": "6817acbcc47149077302a155"
+    }
+  ],
+  "coverImageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Capa_chafariz_pucrs_wikipedia_2020.jpg/2880px-Capa_chafariz_pucrs_wikipedia_2020.jpg"
+},
+{
+  "_id": {
+    "$oid": "682d1bd2b93dbe689f672930"
+  },
+  "nome": "Pontifícia Universidade Católica de São Paulo",
+  "descricao": "A PUC-SP foi fundada em 1946, a partir da união da Faculdade de Filosofia, Ciências e Letras de São Bento (fundada em 1908) e da Faculdade Paulista de Direito. Agregadas a elas, mas com estruturas administrativas financeiras independentes, estavam outras quatro instituições da Igreja. Tempo da Universidade Católica de São Paulo, cuja missão era formar lideranças católicas e os filhos da elite paulista. No início do ano seguinte, o Papa Pio XII concedeu à Universidade Católica o título de Pontifícia e nomeou como primeiro grão-chanceler da instituição o cardeal Dom Carlos Carmelo de Vasconcelos Mota. Também arcebispo de São Paulo, o cardeal Mota foi fundador e um dos principais idealizadores da PUC-SP.",
+  "cidade": "São Paulo",
+  "cursos": [
+    {
+      "nome": "Administração"
+    },
+    {
+      "nome": "Arquitetura e Urbanismo"
+    },
+    {
+      "nome": "Artes Cênicas"
+    },
+    {
+      "nome": "Ciências Biológicas"
+    },
+    {
+      "nome": "Ciência da Computação"
+    },
+    {
+      "nome": "Ciência Econômicas"
+    },
+    {
+      "nome": "Comunicação Social - Estudos de Mídia"
+    },
+    {
+      "nome": "Comunicação Social - Jornalismo"
+    },
+    {
+      "nome": "Design"
+    },
+    {
+      "nome": "Direito"
+    },
+    {
+      "nome": "Engenharia Ambiental"
+    },
+    {
+      "nome": "Engenharia Civil"
+    },
+    {
+      "nome": "Engenharia de Computação"
+    },
+    {
+      "nome": "Engenharia de Controle e Automação"
+    },
+    {
+      "nome": "Engenharia Elétrica"
+    },
+    {
+      "nome": "Engenharia de Matéricas e Nanotecnologia"
+    },
+    {
+      "nome": "Engenharia Mecânica"
+    },
+    {
+      "nome": "Engenharia de Produção"
+    },
+    {
+      "nome": "Engenharia Química"
+    },
+    {
+      "nome": "Filosofia"
+    },
+    {
+      "nome": "Física"
+    },
+    {
+      "nome": "Geografia"
+    },
+    {
+      "nome": "História"
+    },
+    {
+      "nome": "Letras"
+    },
+    {
+      "nome": "Matemática"
+    },
+    {
+      "nome": "Neurociências"
+    },
+    {
+      "nome": "Nutrição"
+    },
+    {
+      "nome": "Pedagogia"
+    },
+    {
+      "nome": "Psicologia"
+    },
+    {
+      "nome": "Química"
+    },
+    {
+      "nome": "Relações Internacionais"
+    },
+    {
+      "nome": "Serviço Social"
+    },
+    {
+      "nome": "Teologia"
+    }
+  ],
+  "vestibulares": [
+    {
+      "nome": "Vestibular de Verão 2025",
+      "datas": [
+        {
+          "titulo": "Inscrição",
+          "startDate": "25/09/2024",
+          "endDate": "12/11/2024"
+        },
+        {
+          "titulo": "Divulgação do local de prova",
+          "startDate": "19/11/2024",
+          "endDate": "19/11/2024"
+        },
+        {
+          "titulo": "Prova presencial",
+          "startDate": "24/11/2024",
+          "endDate": "24/11/2024"
+        },
+        {
+          "titulo": "Divulgação dos resultados",
+          "startDate": "10/12/2024",
+          "endDate": "10/12/2024"
+        },
+        {
+          "titulo": "Matrícula 1ª chamada",
+          "startDate": "11/12/2024",
+          "endDate": "13/12/2024"
+        }
+      ],
+      "status": "encerrado"
+    },
+    {
+      "nome": "Vestibular de Inverno 2025",
+      "datas": [
+        {
+          "titulo": "Inscrição (Prova Presencial)",
+          "startDate": "05/05/2025",
+          "endDate": "20/06/2025"
+        },
+        {
+          "titulo": "Inscrição (ENEM)",
+          "startDate": "05/05/2025",
+          "endDate": "02/07/2025"
+        },
+        {
+          "titulo": "Divulgação do local de prova",
+          "startDate": "27/06/2025",
+          "endDate": "27/06/2025"
+        },
+        {
+          "titulo": "Prova presencial",
+          "startDate": "29/06/2025",
+          "endDate": "29/06/2025"
+        },
+        {
+          "titulo": "Divulgação do gabarito",
+          "startDate": "30/06/2025",
+          "endDate": "30/06/2025"
+        },
+        {
+          "titulo": "Resultado final",
+          "startDate": "10/07/2025",
+          "endDate": "10/07/2025"
+        },
+        {
+          "titulo": "1ª chamada",
+          "startDate": "17/07/2025",
+          "endDate": "18/07/2025"
+        },
+        {
+          "titulo": "Matrícula 1ª chamada",
+          "startDate": "23/07/2025",
+          "endDate": "23/07/2025"
+        },
+        {
+          "titulo": "2ª chamada",
+          "startDate": "24/07/2025",
+          "endDate": "25/07/2025"
+        },
+        {
+          "titulo": "Matrícula 2ª chamada",
+          "startDate": "24/07/2025",
+          "endDate": "27/07/2025"
+        }
+      ],
+      "status": "aberto"
+    }
+  ],
+  "usuariosSeguindo": [],
+  "__v": 0,
+  "coverImageURL": "https://s2-g1.glbimg.com/_saEDTIR29hUlUr5vW3lzYEMOvQ=/0x0:793x525/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2022/G/5/v2Ypb8QQ2Xrxh6WutCyA/puc.png",
+  "estado": "SP"
+},
+{
+  "_id": {
+    "$oid": "000000000000000000000003"
+  },
+  "nome": "Universidade Federal do Paraná",
+  "cidade": "Curitiba",
+  "estado": "PR",
+  "descricao": "A UFPR é a universidade mais antiga do Brasil, destacando-se pela excelência acadêmica e tradição.",
+  "coverImageURL": "https://cdn.bandnewsfmcuritiba.com/band/wp-content/uploads/2024/01/PH23a-16-1024x768-1.jpg",
+  "cursos": [
+    {
+      "_id": {
+        "$oid": "000000000000000000000131"
+      },
+      "nome": "Administração"
+    },
+    {
+      "_id": {
+        "$oid": "000000000000000000000132"
+      },
+      "nome": "Arquitetura e Urbanismo"
+    },
+    {
+      "_id": {
+        "$oid": "000000000000000000000133"
+      },
+      "nome": "Ciência da Computação"
+    },
+    {
+      "_id": {
+        "$oid": "000000000000000000000134"
+      },
+      "nome": "Direito"
+    },
+    {
+      "_id": {
+        "$oid": "000000000000000000000135"
+      },
+      "nome": "Engenharia Civil"
+    },
+    {
+      "_id": {
+        "$oid": "000000000000000000000136"
+      },
+      "nome": "Psicologia"
+    }
+  ],
+  "vestibulares": [
+    {
+      "nome": "Vestibular de Inverno 2025",
+      "datas": [
+        {
+          "titulo": "Inscrição",
+          "startDate": "01/05/2025",
+          "endDate": "03/05/2025"
+        },
+        {
+          "titulo": "Cartão de Confirmação",
+          "startDate": "06/05/2025",
+          "endDate": "08/05/2025"
+        },
+        {
+          "titulo": "Provas",
+          "startDate": "11/05/2025",
+          "endDate": "13/05/2025"
+        },
+        {
+          "titulo": "Notas das Provas",
+          "startDate": "16/05/2025",
+          "endDate": "18/05/2025"
+        },
+        {
+          "titulo": "Resultado do Vestibular",
+          "startDate": "21/05/2025",
+          "endDate": "23/05/2025"
+        },
+        {
+          "titulo": "1ª convocação da matrícula",
+          "startDate": "26/05/2025",
+          "endDate": "28/05/2025"
+        }
+      ],
+      "status": "encerrado"
+    },
+    {
+      "nome": "Vestibular de Verão 2026",
+      "datas": [
+        {
+          "titulo": "Inscrição",
+          "startDate": "01/06/2025",
+          "endDate": "03/06/2025"
+        },
+        {
+          "titulo": "Cartão de Confirmação",
+          "startDate": "06/06/2025",
+          "endDate": "08/06/2025"
+        },
+        {
+          "titulo": "Provas",
+          "startDate": "11/06/2025",
+          "endDate": "13/06/2025"
+        },
+        {
+          "titulo": "Notas das Provas",
+          "startDate": "16/06/2025",
+          "endDate": "18/06/2025"
+        },
+        {
+          "titulo": "Resultado do Vestibular",
+          "startDate": "21/06/2025",
+          "endDate": "23/06/2025"
+        },
+        {
+          "titulo": "1ª convocação da matrícula",
+          "startDate": "26/06/2025",
+          "endDate": "28/06/2025"
+        }
+      ],
+      "status": "aberto"
+    }
+  ],
+  "usuariosSeguindo": []
+},
+{
+  "_id": {
+    "$oid": "000000000000000000000004"
+  },
+  "nome": "Universidade de São Paulo",
+  "cidade": "São Paulo",
+  "estado": "SP",
+  "descricao": "A USP é a maior universidade pública do Brasil e referência na América Latina.",
+  "coverImageURL": "https://www5.usp.br/wp-content/uploads/2018/10/drone-praca-relogio2510-2.jpg",
+  "cursos": [
+    {
+      "_id": {
+        "$oid": "000000000000000000000141"
+      },
+      "nome": "Administração"
+    },
+    {
+      "_id": {
+        "$oid": "000000000000000000000142"
+      },
+      "nome": "Arquitetura e Urbanismo"
+    },
+    {
+      "_id": {
+        "$oid": "000000000000000000000143"
+      },
+      "nome": "Ciência da Computação"
+    },
+    {
+      "_id": {
+        "$oid": "000000000000000000000144"
+      },
+      "nome": "Direito"
+    },
+    {
+      "_id": {
+        "$oid": "000000000000000000000145"
+      },
+      "nome": "Engenharia Civil"
+    },
+    {
+      "_id": {
+        "$oid": "000000000000000000000146"
+      },
+      "nome": "Psicologia"
+    }
+  ],
+  "vestibulares": [
+    {
+      "nome": "Vestibular de Inverno 2025",
+      "datas": [
+        {
+          "titulo": "Inscrição",
+          "startDate": "01/07/2025",
+          "endDate": "03/07/2025"
+        },
+        {
+          "titulo": "Cartão de Confirmação",
+          "startDate": "06/07/2025",
+          "endDate": "08/07/2025"
+        },
+        {
+          "titulo": "Provas",
+          "startDate": "11/07/2025",
+          "endDate": "13/07/2025"
+        },
+        {
+          "titulo": "Notas das Provas",
+          "startDate": "16/07/2025",
+          "endDate": "18/07/2025"
+        },
+        {
+          "titulo": "Resultado do Vestibular",
+          "startDate": "21/07/2025",
+          "endDate": "23/07/2025"
+        },
+        {
+          "titulo": "1ª convocação da matrícula",
+          "startDate": "26/07/2025",
+          "endDate": "28/07/2025"
+        }
+      ],
+      "status": "encerrado"
+    },
+    {
+      "nome": "Vestibular de Verão 2026",
+      "datas": [
+        {
+          "titulo": "Inscrição",
+          "startDate": "01/08/2025",
+          "endDate": "03/08/2025"
+        },
+        {
+          "titulo": "Cartão de Confirmação",
+          "startDate": "06/08/2025",
+          "endDate": "08/08/2025"
+        },
+        {
+          "titulo": "Provas",
+          "startDate": "11/08/2025",
+          "endDate": "13/08/2025"
+        },
+        {
+          "titulo": "Notas das Provas",
+          "startDate": "16/08/2025",
+          "endDate": "18/08/2025"
+        },
+        {
+          "titulo": "Resultado do Vestibular",
+          "startDate": "21/08/2025",
+          "endDate": "23/08/2025"
+        },
+        {
+          "titulo": "1ª convocação da matrícula",
+          "startDate": "26/08/2025",
+          "endDate": "28/08/2025"
+        }
+      ],
+      "status": "aberto"
+    }
+  ],
+  "usuariosSeguindo": []
+}]
